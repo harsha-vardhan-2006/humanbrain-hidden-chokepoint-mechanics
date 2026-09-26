@@ -17,3 +17,14 @@
 __pycache__/
 *.pyc
 *.tmp
+
+# LaTeX intermediates (Tectonic cleans up by default; keep these out of git
+# for any future engine switch)
+*.aux
+*.log
+*.blg
+*.bbl
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

@@ -1332,3 +1332,36 @@ CHANGES:     (1) README.md: new "Research Paper (published in this
 INTEGRITY:   Frozen artifacts untouched; v1.1.0 untouched; verify_final_numbers
              unaffected (no analysis artifact modified).
 ```
+
+## E31 — GIT INTEGRITY RE-VERIFICATION (2026-09-27; remote confirmed complete; "17 commits" = stale browser view)
+
+```
+Date:        2026-09-27
+Scope:       Author reported "online shows only 17 commits". Verification
+             shows the remote is complete and identical to local; the
+             browser view was stale. Housekeeping applied. No scientific
+             content changed.
+EVIDENCE:    (1) git ls-remote origin: refs/heads/main = ce94b86 (== local
+             HEAD); tag v1.1.0 = 0d35c47 (annotated) peeling to dd5389b —
+             unchanged. (2) GitHub REST API (queried live,
+             /repos/.../commits): latest commit = ce94b86 "Publish final
+             research paper as repo headline artifact", parent chain
+             6fea46c -> 3c09e0e -> 2a4d62c -> ... identical SHAs to
+             local. (3) git rev-list --count origin/main = 20 (after
+             fetch) == local 20. (4) No mirror repo exists under the
+             commit-author's other GitHub account (404).
+DIAGNOSIS:   17 was the true commit count at E28 (2026-09-26); the author's
+             browser served a cached commits page from before commits
+             3c09e0e/6fea46c/ce94b86. Same stale-view class as the "9
+             commits" incident documented in E28. Resolution: hard
+             refresh (Ctrl+F5) or reopen
+             github.com/harsha-vardhan-2006/humanbrain_cross_species_cis/
+             commits — GitHub renders 20.
+HOUSEKEEPING: git gc (removed one dangling blob, d5be471; unreachable
+             scratch object, no history impact); .gitignore extended with
+             LaTeX intermediate patterns (*.aux/*.log/*.blg/*.bbl/*.out/
+             *.synctex.gz/*.fls/*.fdb_latexmk) as defense-in-depth for
+             future engine switches (Tectonic already cleans up).
+INVARIANTS:  v1.1.0 untouched; frozen artifacts untouched; worktree clean;
+             verify_final_numbers.py 46/46 PASS unchanged.
+```
