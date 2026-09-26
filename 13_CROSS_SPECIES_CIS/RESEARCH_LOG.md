@@ -1309,3 +1309,26 @@ VERDICT:   FINAL PAPER PACKAGE READY FOR AUTHOR REVIEW AND JOURNAL
   GitHub Release (UI action; URL already provided), choose venue,
   submit. No scientific content changed in this pass.
 ```
+
+## E30 — PAPER PUBLISHED IN-REPO: README HEADLINE LINKAGE (2026-09-27; documentation only)
+
+```
+Date:        2026-09-27
+Scope:       Author-directed step to "publish the paper in the repo":
+             surface the already-QC-checked typeset paper as the
+             repository's headline artifact. No scientific content, no
+             LaTeX source, and no PDF changed in this pass.
+CHANGES:     (1) README.md: new "Research Paper (published in this
+             repository)" section at the top with direct links to
+             FINAL_MANUSCRIPT/main.pdf, supplementary.pdf, LaTeX source,
+             and QC report; Manuscript section updated to lead with the
+             typeset paper (Markdown provenance kept as source-of-record
+             for content); Citation block now points to the typeset PDF
+             path. (2) SUBMISSION_PACKAGE/README.md: new "FINAL RESEARCH
+             PAPER" section listing all artifacts with rebuild
+             instructions (tectonic, generate_tables.py,
+             make_fig_cis_method.py, QC re-runs); rendered/ Markdown
+             snapshots re-labeled as provenance of the pre-typeset draft.
+INTEGRITY:   Frozen artifacts untouched; v1.1.0 untouched; verify_final_numbers
+             unaffected (no analysis artifact modified).
+```

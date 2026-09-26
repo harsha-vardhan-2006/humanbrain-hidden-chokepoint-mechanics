@@ -6,6 +6,41 @@ fabricated. **Status: placeholders resolved (CRediT confirmed, COI, ethics,
 affiliation); rendering DONE; package is submission-ready pending the
 author's final read-through and the human release/signing decision.**
 
+## FINAL RESEARCH PAPER (typeset, 2026-09-27)
+
+The package now contains the **final journal-style research paper**, fully
+typeset from LaTeX and QC-checked — this is the citable artifact to submit:
+
+| Artifact | Path |
+|---|---|
+| Paper (PDF, 12 pp) | [`FINAL_MANUSCRIPT/main.pdf`](FINAL_MANUSCRIPT/main.pdf) |
+| Paper (LaTeX source) | `FINAL_MANUSCRIPT/main.tex` + `references.bib` + `tables/` + `figures/` |
+| Supplementary (PDF, 5 pp) | [`SUPPLEMENTARY/supplementary.pdf`](SUPPLEMENTARY/supplementary.pdf) (+ `supplementary.tex`) |
+| Table generator (fail-loud) | [`TABLE_SOURCES/generate_tables.py`](TABLE_SOURCES/generate_tables.py) |
+| New figure source | [`FIGURE_SOURCES/make_fig_cis_method.py`](FIGURE_SOURCES/make_fig_cis_method.py) |
+| QC report | [`FINAL_PAPER_QC_REPORT.md`](FINAL_PAPER_QC_REPORT.md) |
+| QC scripts | `QC/pdf_qc.py`, `QC/page_render_qc.py` |
+
+**Rebuild the paper** (Tectonic 0.17+, any OS; resolves packages and runs
+BibTeX automatically):
+```bash
+cd FINAL_MANUSCRIPT && tectonic main.tex
+cd ../SUPPLEMENTARY && tectonic supplementary.tex
+```
+Regenerate tables (requires the frozen CSV/RESOLUTION artifacts; exits
+non-zero on any mismatch): `python TABLE_SOURCES/generate_tables.py`
+from `13_CROSS_SPECIES_CIS/`. Regenerate the schematic figure:
+`python FIGURE_SOURCES/make_fig_cis_method.py`.
+QC re-run: `python QC/pdf_qc.py` and `python QC/page_render_qc.py`
+(needs `pypdf`, `pypdfium2`).
+
+The paper is a faithful typeset presentation of the frozen results: no
+number, hypothesis, threshold, seed, or interpretation was altered;
+negative results are reported as first-class outcomes; E06 is described as
+a DESCRIPTIVE-PASS with no pre-registered tolerance. The Markdown renders
+in `rendered/` below remain as provenance snapshots of the pre-typeset
+draft.
+
 ## Contents
 | File | Purpose | Status |
 |---|---|---|

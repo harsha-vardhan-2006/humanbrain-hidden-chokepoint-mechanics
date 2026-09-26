@@ -9,6 +9,29 @@ analyses, if any, will be added only as clearly labeled post-hoc/secondary
 analyses — never by modifying the pre-registered primary results. Code is
 licensed MIT (`LICENSE`).
 
+## Research Paper (published in this repository)
+
+The final journal-style research paper is typeset, compiled, and committed
+here:
+
+- **Paper (PDF):** [`13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/main.pdf`](13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/main.pdf)
+  — *“Control-impact architecture of the human structural connectome:
+  degree dominance, a small near-universal residual, and a cross-scale
+  architectural comparison with the fly connectome”* (12 pp;
+  Harsha Vardhan Malipeddi, Independent Researcher).
+- **Supplementary material (PDF):** [`13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/SUPPLEMENTARY/supplementary.pdf`](13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/SUPPLEMENTARY/supplementary.pdf)
+  (S1–S14 equivalents; 5 pp).
+- **LaTeX source:** `FINAL_MANUSCRIPT/main.tex` + `references.bib`,
+  auto-generated booktabs tables (`tables/`), and vector figures
+  (`figures/`). Rebuild: `tectonic main.tex` (see
+  [`SUBMISSION_PACKAGE/README.md`](13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/README.md)).
+- **QC:** all 17 pages programmatically inspected; zero placeholders,
+  zero unresolved references; every frozen number verified in the
+  typeset PDFs (`FINAL_PAPER_QC_REPORT.md` in the package root).
+
+The paper is a faithful presentation of the frozen results below — it adds
+no new analysis and makes no claims beyond those documented here.
+
 ## Research Question
 
 Can removal-based Control Impact Score (CIS) identify structurally
@@ -212,6 +235,14 @@ manually edited). Tables: `13_CROSS_SPECIES_CIS/09_TABLES/`
 
 ## Manuscript
 
+**Final research paper (typeset):**
+`13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/` — `main.pdf`
+(compiled, QC-checked) with full LaTeX source (`main.tex`,
+`references.bib`, generated `tables/`, vector `figures/`) and
+`../SUPPLEMENTARY/supplementary.pdf`. Package guide:
+`SUBMISSION_PACKAGE/README.md`.
+
+Provenance Markdown (frozen v2.0 source of the paper's content):
 `13_CROSS_SPECIES_CIS/10_REPORT/MANUSCRIPT_FINAL.md` (author block, CRediT,
 COI, ethics, references) — identical copy in
 `13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/manuscript.md`, with rendered
@@ -256,7 +287,9 @@ If you use this work, cite the study and the underlying datasets:
   year         = {2026},
   howpublished = {github.com/harsha-vardhan-2006/humanbrain_cross_species_cis},
   note         = {Release v1.1.0; frozen analysis; all numbers trace to
-                  archived artifacts}
+                  archived artifacts. Typeset paper:
+                  13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/
+                  FINAL_MANUSCRIPT/main.pdf}
 }
 ```
 
