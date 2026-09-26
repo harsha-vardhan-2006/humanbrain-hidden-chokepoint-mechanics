@@ -1244,3 +1244,68 @@ Verdict:   Publication-ready: submission package, verified renderings,
   Remaining manual actions: publish the v1.1.0 GitHub Release, choose the
   venue, enter contact details in submission systems, submit.
 ```
+
+## E29 — FINAL PAPER PRODUCTION: LaTeX MANUSCRIPT + PDF + PAGE-BY-PAGE QC (2026-09-27; presentation only, science frozen)
+
+```
+Date:        2026-09-27
+Scope:       Author-directed production of the final journal-style research
+             paper from the frozen research. NO scientific rerun; every
+             frozen number, hypothesis, threshold, seed, and cohort
+             untouched; negative results preserved verbatim.
+GIT:         Started from HEAD = origin/main = 3c09e0e (18 commits);
+             v1.1.0 (annotated 0d35c47, peels to dd5389b) NOT MOVED.
+TOOLING:     Tectonic 0.17.0 (XeTeX) installed as the LaTeX engine
+             (single binary, user-local); pypdf used for PDF text QC;
+             pypdfium2 used for page rasterization (visual QC).
+STRUCTURE:   13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/
+             ├── FINAL_MANUSCRIPT/  main.tex, references.bib, main.pdf,
+             │   figures/ (9 vector PDFs incl. new fig02_cis_method),
+             │   tables/ (4 auto-generated booktabs floats)
+             ├── SUPPLEMENTARY/     supplementary.tex, supplementary.pdf,
+             │   figures/ (3), tables/ (2)
+             ├── FIGURE_SOURCES/    make_fig_cis_method.py (new schematic;
+             │   pure matplotlib, no data plotted)
+             ├── TABLE_SOURCES/     generate_tables.py (fail-loud: parses
+             │   frozen CSV/RESOLUTION artifacts; ALL FROZEN-VALUE
+             │   ASSERTIONS PASS; run output committed)
+             └── QC/                pdf_qc.py, page_render_qc.py
+             FINAL_PAPER_QC_REPORT.md at package root.
+MANUSCRIPT:  "Control-impact architecture of the human structural
+             connectome: degree dominance, a small near-universal
+             residual, and a cross-scale architectural comparison with
+             the fly connectome" — Harsha Vardhan Malipeddi, Independent
+             Researcher. 12 pages: structured abstract, keywords,
+             intro (H1-H4 as frozen), methods (CIS equation, controls,
+             nulls, statistics), results incl. negative findings,
+             bounded discussion, data/code availability, CRediT, COI
+             (Codebuff disclosure preserved), ethics (secondary public
+             data, no IRB claim). Bounded novelty language; E06 =
+             DESCRIPTIVE-PASS with exact 0.002619 / 0.0026194 and
+             explicit no-preregistered-tolerance statement;
+             "Architecture replicates; anatomy does not." framing kept.
+REFERENCES:  11 entries verified against sources; Yadav 2025 corrected
+             (authors Prateek Yadav, Pramod Shinde, Aradhana Singh; DOI
+             10.1162/netn_a_26). 11/11 keys cited, unsrt style.
+COMPILE:     Tectonic: main.tex and supplementary.tex both compile clean.
+             Fixes during bring-up: amssymb removed (newtxmath clash),
+             xcolor+url added to supplement, long \texttt paths ->
+             breakable \path (zero overfull boxes). PDFs: main.pdf
+             12 pp / 233 KiB; supplementary.pdf 5 pp / 92 KiB.
+QC:          (1) Placeholder scan (TBD/TODO/FIXME/PLACEHOLDER/XXXX/
+             imperative Insert/lorem/undefined/??) on extracted text:
+             ZERO findings in both PDFs. (2) Unresolved refs: zero
+             ("?? absent"). (3) Frozen-number presence: 54/54 main,
+             20/20 supplementary (typeset forms verified, e.g.
+             1.24 x 10^-60, 2.6 x 10^-197, .031, 2.63x, 5.30, 0.0979,
+             0.109/0.782/1.21, 139,255, 43/456, 23.30, 200/200, 16.36,
+             0.943, 778/801, 0.100 [0.078-0.129], 36,846, 58.8%,
+             0.002619, 2% vs 80%). (4) Visual page QC: all 17 pages
+             rasterized at ~144 dpi (pypdfium2); 0 blank pages,
+             0 edge-clipping, 0 density anomalies.
+VERIFICATION: verify_final_numbers.py re-run post-production: 46/46 PASS.
+VERDICT:   FINAL PAPER PACKAGE READY FOR AUTHOR REVIEW AND JOURNAL
+  SUBMISSION. Remaining manual actions (author only): publish the v1.1.0
+  GitHub Release (UI action; URL already provided), choose venue,
+  submit. No scientific content changed in this pass.
+```

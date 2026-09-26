@@ -1,0 +1,30 @@
+% AUTO-GENERATED from 10_REPORT/RESOLUTION.md concordance block, cross-checked
+% against 09_TABLES/table_08_robustness.csv -- do not edit numbers by hand.
+\begin{table}[!t]
+\centering\small
+\caption{E06 robustness ladder: nine pre-registered alternative configurations
+(frozen $n=150$ cohort, nested samples). Each condition reproduces the primary
+architecture. $\Delta_{50}$: like-for-like deviation of the top-50 mean-of-means
+from the like-for-like primary row (4S456, \texttt{radius2\_count}, cost 0.15,
+same cohort; primary top-50 mean 0.0012286). $\ast$: maximum absolute
+deviation, full precision $0.0026194$ (atlas AAL116: 0.0038480 vs 0.0012286).
+No numeric tolerance was pre-registered for E06 in PROTOCOL\_FREEZE or
+STUDY\_DESIGN; the concordance is a descriptive comparison, not a pass/fail
+gate. Sources: \texttt{RESOLUTION.md}; \texttt{table\_08\_robustness.csv}.}
+\label{tab:robustness}
+\begin{tabular}{lcccccc}
+\toprule
+Condition & $n$ & top-50 mean & $\Delta_{50}$ & Gini (med.) & $\Delta$ Gini & $\rho$(CIS, deg.) (med.) \\
+\midrule
+cost 0.10 & 150 & 0.001564 & 0.000335 & 0.52647 & 0.03486 & 0.8978 \\
+cost 0.20 & 150 & 0.001029 & -0.000200 & 0.47547 & -0.01614 & 0.9791 \\
+cost 0.25 & 150 & 0.000926 & -0.000302 & 0.45767 & -0.03395 & 0.9950 \\
+atlas 4S256 & 150 & 0.001887 & 0.000658 & 0.50955 & 0.01794 & 0.9422 \\
+atlas 4S156 & 150 & 0.003179 & 0.001951 & 0.56178 & 0.07017 & 0.9566 \\
+atlas Brainnetome246Ext & 150 & 0.001704 & 0.000476 & 0.45887 & -0.03274 & 0.9463 \\
+atlas AAL116 & 150 & 0.003848 & 0.002619$\ast$ & 0.53892 & 0.04731 & 0.9447 \\
+weights \texttt{sift\_invnodevol} & 150 & 0.001187 & -0.000042 & 0.48316 & -0.00845 & 0.9379 \\
+weights \texttt{radius2\_count} & 150 & 0.001254 & 0.000026 & 0.48526 & -0.00635 & 0.9489 \\
+\bottomrule
+\end{tabular}
+\end{table}
