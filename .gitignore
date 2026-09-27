@@ -14,6 +14,7 @@
 # Regenerable / heavy data inside the tracked tree
 13_CROSS_SPECIES_CIS/02_PREPROCESSING/cache_parts/
 13_CROSS_SPECIES_CIS/02_PREPROCESSING/quarantined/
+13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/quarantined/
 __pycache__/
 *.pyc
 *.tmp

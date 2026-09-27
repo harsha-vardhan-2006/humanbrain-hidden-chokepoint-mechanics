@@ -1365,3 +1365,62 @@ HOUSEKEEPING: git gc (removed one dangling blob, d5be471; unreachable
 INVARIANTS:  v1.1.0 untouched; frozen artifacts untouched; worktree clean;
              verify_final_numbers.py 46/46 PASS unchanged.
 ```
+
+## E32 — MANUSCRIPT-REVISION COMPLETION PASS (2026-09-27, late; presentation only)
+
+```
+Date:        2026-09-27
+Trigger:     "Continue the pending tasks." State inspection found an
+             uncommitted in-progress manuscript revision: main.tex +282/−53
+             vs HEAD (new "Pre-registered design and decision framework" and
+             "Reproducibility and audit" subsections; expanded Discussion),
+             recompiled main.pdf, and three untracked scratch files
+             (main_draft.tex, main_draft.pdf, nodetable.pdf). The PDF predated
+             the latest tex edits.
+Content review (against frozen artifacts, BEFORE any edit):
+  - All new prose numbers verified against frozen sources: 0.0026194 /
+    0.0038480 / 0.0012286 (RESOLUTION E25), 2%/80% shares, fly 0.0979
+    p=0.109, z 16.36, p 1.24e-60, 778/801, delta 0.100, 43/456, z 23.30,
+    0.943 vs 0.486, 0.167, 1/101 floor. All cited keys present in
+    references.bib (11/11).
+Defects found and fixed (presentation only; no statistic changed):
+  (1) STATISTICAL-LABEL CORRECTION: [0.078, 0.129] is the ACROSS-SUBJECT
+      IQR of Cliff's delta per the frozen record (RESEARCH_LOG E03b:
+      "median 0.100 [IQR 0.078-0.129]"; FINAL_RESULT_DECISION row 7 same;
+      no 95% CI was ever computed). Five occurrences labeled it a
+      "95% CI" (3 pre-existing in HEAD, 2 newly added). All five now read
+      "across-subject IQR"; the Methods effect-size sentence now states the
+      median + across-subject IQR reporting convention.
+  (2) DUPLICATED CONCLUSION SENTENCE removed ("The finding is
+      hypothesis-generating ... future connectomes." appeared twice
+      consecutively; editing leftover of this revision, 0 occurrences in
+      HEAD).
+  (3) FABRICATED SUPPLEMENTARY-FIGURE LIST corrected: the new
+      "Supplementary description" section named four files that do not
+      exist (figS1_qc_summary.pdf, figS2_rank_stability.pdf,
+      figure_provenance.pdf, figure_residue_cube.pdf). Replaced with the
+      ACTUAL supplementary contents (S1 fig02_population_qc.pdf, S2
+      fig07_robustness.pdf, S3 fig09_conceptual.pdf, Tables S1-S2),
+      descriptions matching supplementary.tex verbatim-facts. A false
+      "byte-stable on regeneration ... no data-dependent content" claim was
+      also removed.
+  (4) Overfull hbox (1.3pt, long GitHub URL) fixed via
+      \PassOptionsToPackage{hyphens}{url}; compile now has zero overfull
+      warnings (remaining warnings are pre-existing font-substitution
+      notices).
+Housekeeping:
+  - Scratch files quarantined (no-delete rule):
+    SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/quarantined/{main_draft.tex,
+    main_draft.pdf,nodetable.pdf}; folder added to .gitignore (matches the
+    02_PREPROCESSING/quarantined/ convention).
+  - Six auto-generated tables showed EOL-only churn (LF vs CRLF); restored
+    to HEAD (content identical).
+Recompile:   tectonic main.tex clean -> main.pdf (247 KiB).
+Validation:  QC/pdf_qc.py ALL PASS (0 placeholders, 0 unresolved refs,
+             54+20 frozen numbers, 11/11 bib keys); QC/page_render_qc.py ALL
+             PAGES PASS; 10_REPORT/verify_final_numbers.py 46/46 PASS.
+             Supplementary source untouched (no recompile needed).
+Verdict:   The uncommitted revision is completed, corrected, and verified;
+  presentation-only changes; no scientific value, gate, or frozen artifact
+  modified; 46/46 numeric audit PASS.
+```

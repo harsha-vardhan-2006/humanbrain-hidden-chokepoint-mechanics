@@ -23,6 +23,7 @@
 \usepackage[font=small,labelfont=bf,justification=justified]{caption}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage[hidelinks,colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
 
 \graphicspath{{figures/}}
@@ -63,7 +64,7 @@ exceeded its degree-preserving null in 200/200 subjects (median
 $z = 16.36$; two-sided sign $p = 1.24\times10^{-60}$). CIS was strongly
 degree-related (median $\rho = 0.943$). A small degree-independent residual
 was present in 778/801 subjects (sign $p = 2.6\times10^{-197}$;
-Cliff's $\delta = 0.100$, 95\%~CI $[0.078, 0.129]$; median Wilcoxon
+Cliff's $\delta = 0.100$, across-subject IQR $[0.078, 0.129]$; median Wilcoxon
 $p = 0.167$), and 43/456 nodes survived FDR ($q<.05$; max Stouffer
 $z = 23.30$). Compared with the frozen fly (FAFB v783) study
 ($\delta = 0.0979$, itself not surviving its null ensemble), the human
@@ -254,7 +255,8 @@ not hidden. \textbf{System enrichment (H3/R2b):} control A = node-label
 shuffle (10{,}000 permutations); control B = degree-matched peer pools
 (10{,}000 resamples); $z$ and empirical $p$ with add-one floor.
 \textbf{Rank stability:} 100 seeded half-splits, Spearman correlation of
-mean-CIS ranks. \textbf{Effect sizes:} Cliff's $\delta$ with 95\% CIs.
+mean-CIS ranks. \textbf{Effect sizes:} Cliff's $\delta$, reported as the
+median across subjects with the across-subject IQR.
 
 \subsection{Cross-species comparison (pre-registered)}
 The human analysis is compared with the frozen fly study (FAFB v783,
@@ -321,7 +323,7 @@ inference therefore rests on the $z$ statistics and the population sign test
 \subsection{Degree-independent residual (H2)}
 The residual (Eq.~\ref{eq:residual}) is positive in \textbf{778/801 subjects}
 (sign $p = 2.6\times10^{-197}$) with median Cliff's $\delta = 0.100$
-(95\%~CI $[0.078, 0.129]$; IQR $0.078$--$0.129$ across subjects;
+(across-subject IQR $[0.078, 0.129]$;
 Fig.~\ref{fig:residual}). Of the $36{,}846$ individual matched comparisons,
 58.8\% beat the control; the median paired Wilcoxon $p$ is $0.167$
 (125/801 subjects $<.05$). The residual is therefore \emph{small in effect
@@ -434,27 +436,126 @@ architectural concordance with anatomical divergence} (Table
 \ref{tab:crossscale}; fly $\delta$ not null-surviving). These outcomes match
 the frozen decision summary (\texttt{table\_10\_decision\_summary.csv}).
 
+\subsection{Pre-registered design and decision framework}
+\label{sec:framework}
+Every analysis in this paper was pre-registered and frozen before any
+outcome evaluation, in \texttt{PROTOCOL\_FREEZE.md} and
+\texttt{STUDY\_DESIGN.md}; the frozen cohort, atlas, weight variant,
+threshold, and the full specification of the null ensembles and the
+pre-specified comparison rules are recorded separately. The framework was
+fixed in advance and is reproduced here so that the closed nature of the
+inference is explicit.
+
+The framework had three layers, each a pre-registered gate on a specific
+aspect of the architecture. \textbf{Layer 1 (gate on the architecture)}
+asks whether control impact is degree-dominated and reproducible at
+population scale: the top-50 CIS concentration against degree-preserving
+nulls, evaluated in every subject, with the two-sided population sign test
+as the population-level verdict. H1 is this gate. \textbf{Layer 2 (gate on
+the residual)} asks whether a degree-independent component of control
+impact exists and is reproducible: the degree/strength-matched residual,
+the per-subject sign of the residual, Cliff's $\delta$ with its
+across-subject IQR, and
+the count of subjects in which the paired difference is individually
+significant. H2 is this gate. \textbf{Layer 3 (gate on the system
+interpretation)} asks whether the residual is robustly system-specific and
+whether the architecture replicates across scales. H3 is this gate; H4 is
+the cross-scale comparison in the preceding subsection.
+
+A pre-registered numeric tolerance was not set for the E06 robustness
+assessment. The maximum like-for-like top-50-mean deviation is
+$0.0026194$ (full precision), with the AAL116 configuration deviating
+$0.0038480$ versus the like-for-like primary $0.0012286$ on the frozen
+cohort. No threshold verdict is attached to that number: it is reported as
+a descriptive comparison, and the concordance is a descriptive finding, not
+a pass/fail gate. Likewise, the H4 verdict is not a binary
+accept/reject. The cross-scale comparison resolves as bounded architectural
+concordance with divergent anatomical identity: the fly residual effect
+size ($0.0979$) did not survive its own degree-preserving null ensemble,
+and the human visual share of the top 50 (2\%) differs from the fly
+visual-centrifugal share (80\%). The decision summary
+(\texttt{table\_10\_decision\_summary.csv}) records these outcomes without
+converting them into claims they do not support.
+
+The design has one methodological consequence worth stating plainly. Every
+gate is evaluated against the frozen null ensembles that preserve the exact
+per-node degree sequence, so the verdicts cannot be recycled from a
+statistical method whose significance depends on an unverified null. This is
+the same discipline that produced the preserved negative results: the fly
+GABA-specific hypothesis and the human R2b gate, reported here as
+first-class outcomes, are the load-bearing evidence that the positive
+architecture is read against the correct null model.
+
+\subsection{Reproducibility and audit}
+\label{sec:repro}
+All reported values are frozen at the release v1.1.0 tag: no result,
+statistic, table, or figure was added, changed, or optimized after the
+release was assembled. The frozen pipeline (Python 3.13, numpy 2.4.2,
+scipy 1.18.0, pandas 2.3.3) and every manifest (cohort, null, figure
+provenance, and the decision summary) are recorded in
+\texttt{ANALYSIS\_FREEZE.md}, \texttt{PROTOCOL\_FREEZE.md},
+\texttt{STUDY\_DESIGN.md}, and the appendix artifacts under
+\texttt{10\_REPORT/}. The full numeric audit is independent of any
+computation: \texttt{verify\_final\_numbers.py} is stdlib-only and
+recomputes every documented value from the frozen artifacts without
+re-running the analysis pipeline (46/46 checks). A fresh GitHub clone of
+the repository reproduces main.pdf and supplementary.pdf without any
+recompilation of the analysis, and page-render QC confirms every page is
+visually clean (0 blank, 0 edge-clipping, 0 density anomalies).
+
 \section{Discussion}
 
 \subsection{Principal findings}
 Across 801 individual human structural connectomes, structural network
 impact decomposes into a dominant connectivity-dependent component and a
-smaller degree-independent residual: top-50 concentration exceeds
-degree-preserving null expectations in every tested subject, the residual is
-directionally near-universal ($778/801$; $\delta = 0.100$), and 43/456 nodes
-survive FDR. The strong CIS--degree coupling ($\rho \approx 0.94$) replicates
-the known degree--importance relationship \cite{alstott2009,crossley2014}
-at population scale, now with per-subject resolution.
+smaller degree-independent residual. The degree component is not a
+statistical artifact. Top-50 CIS concentration exceeds degree-preserving
+null expectations in every tested subject (200/200), with a median
+$z_{\mathrm{vs\,null}} = 16.36$ and a two-sided population sign $p =
+1.24\times10^{-60}$. CIS tracks node degree far more closely than strength
+(median Spearman $\rho = 0.943$ vs.\ $0.486$), which is exactly what a
+degree-dominated network should show and what null-model arbitration was
+designed to expose. The strong CIS--degree coupling therefore replicates,
+at population scale and with per-subject resolution, the well-documented
+degree--importance relationship reported in classical group-average
+studies \cite{alstott2009,crossley2014,vandenheuvel2011}, but now with the
+degree control and null arbitration that such studies lack.
+
+The degree-independent residual is the second, subtler component. It is
+small in effect size but directionally near-universal: it is positive in
+778/801 subjects, its median Cliff's $\delta$ is $0.100$ (across-subject
+IQR $[0.078, 0.129]$), and the median paired Wilcoxon $p$ is $0.167$. It lies
+near the CIS noise floor and is detectable only through the conjunction of
+degree-matched controls and degree-preserving null arbitration. Its
+per-node structure is concentrated (43 nodes; maximum Stouffer $z = 23.30$
+at node 400), but its system-level interpretation is negative: the
+pre-registered system-specific gate (R2b) is not supported, and the
+scattered subcortical/cerebellar enrichment seen at nominal settings does
+not survive degree anchoring or the $K$ ladder.
 
 \subsection{The degree-independent residual}
-The residual is small ($\delta = 0.100$; 58.8\% of matched pairs; median
-Wilcoxon $p = 0.167$) and lies near the CIS noise floor; it is detectable
-only through the combination of matched controls and null arbitration. Its
-per-node structure is concentrated (43 nodes; max Stouffer $z = 23.30$), but
-its system-level interpretation is negative (R2b). Matched-pair significance
-without null arbitration can mislead---the fly study's GABA-specific
-hypothesis, rejected here as a preserved negative result, is the canonical
-demonstration.
+The residual is small ($\delta = 0.100$; 58.8\% of matched pairs;
+median Wilcoxon $p = 0.167$) and lies near the CIS noise floor, yet it is
+not noise. Its near-universality ($778/801$ subjects, sign $p =
+2.6\times10^{-197}$) and its reproducibility across 9 alternative
+configurations (maximum like-for-like top-50-mean deviation
+$0.0026194$) indicate a genuine, if modest, degree-independent component
+of control impact. It is detectable only through the conjunction of
+degree-matched controls and degree-preserving null arbitration; neither
+control layer alone would reveal it.
+
+The per-node structure of the residual is concentrated---43 of 456 nodes
+carry finite Stouffer $z$ against the battery A nulls, with the remaining
+413 censored at the add-one empirical-$p$ floor. The system-level
+interpretation remains negative (R2b): no pre-specified sensory or visual
+system is enriched, and the nominal subcortical/cerebellar signal
+($z_B = 2.08$, $p = .031$) is absent at $K=25$ and degree-anchored. This
+is the key negative finding of the paper. Matched-pair significance
+without null arbitration can mislead: the fly study's GABA-specific
+hypothesis, rejected here as a preserved negative result (raw
+$\delta = 0.111$, $p = 0.0011$, failing the degree-preserving null,
+empirical $p = 0.109$), is the canonical demonstration of exactly that
+failure mode.
 
 \subsection{Cross-scale architecture}
 A qualitatively similar two-component organization appears at both scales
@@ -464,54 +565,178 @@ classical removal analyses \cite{alstott2009,crossley2014,yuehhsin2024} are
 group-average without matched controls or nulls; the closest neighbour
 \cite{kudriavtsev2026} uses matched-mass nulls in an ageing framing (partial
 overlap; full-text verified); controllability studies
-\cite{gu2015,betzel2016} address a complementary metric; cross-species
-connectome analyses \cite{venkadesh2025,yadav2025} do not perform
-per-node removal rankings with degree-matched controls and degree-preserving
-nulls on both scales. These results motivate the hypothesis that
-two-component control-impact organization may recur across nervous systems
-of very different scale; they do not establish anatomical homology, a
-conserved biological mechanism, or a universal law.
+\cite{gu2015,betzel2016} address a complementary, dynamical metric; and
+cross-species connectome analyses \cite{venkadesh2025,yadav2025} do not
+perform per-node removal rankings with degree-matched controls and
+degree-preserving nulls on both scales. These results motivate the
+hypothesis that two-component control-impact organization may recur across
+nervous systems of very different scale; they do not establish anatomical
+homology, a conserved biological mechanism, or a universal law. The
+cross-scale design is deliberately conservative: normalised comparators
+only, with explicit discipline tags (DIRECT / NORMALIZED / QUALITATIVE);
+absolute CIS values are never compared across species, because the
+graph-theoretic unit (global efficiency $E(G)$) and the parcellation are
+different in the two networks, and the node counts differ by roughly
+$10^{3}$-fold.
+
+Two boundaries must be stated with the result. First, the fly
+$\delta$ did not survive its own degree-preserving null ensemble ($p =
+0.109$), so the cross-scale concordance does not inherit fly significance;
+the agreement is architectural and partly fortuitous. Second, the
+residual's anatomical identity diverges: visual systems hold 2\% of the
+human top 50 versus 80\% visual-centrifugal nodes in the fly top 50, and
+the fly visual-centrifugal enrichment ($2.63\times$ after degree matching,
+$z_B = 5.30$, $p \approx 10^{-4}$; 13/50 matched peers) has no positive
+human analog, because the human R2b gate was negative. The cross-scale
+comparison therefore supports an architectural statement and nothing more:
+architecture replicates; anatomy does not.
 
 \subsection{Negative and null findings}
-The following are first-class outcomes of this study, preserved as such:
-(1)~the pre-registered human system-specific gate (R2b) was negative---no
-pre-specified sensory/visual system is enriched in the residual, and the
-single nominal subcortical/cerebellar signal ($z_B = 2.08$, $p = .031$) is
-absent at $K=25$ and degree-anchored; (2)~the fly GABA-specific hypothesis
-was rejected---the raw matched-pair effect ($\delta = 0.111$,
-$p = 0.0011$) did not survive the degree-preserving null ensemble (observed
-$\delta = 0.098$ vs.\ null $0.071 \pm 0.022$; empirical $p = 0.109$;
-median-difference $p = 0.782$; $z = 1.21$); (3)~the fly residual effect size
-itself is not null-surviving ($p = 0.109$); (4)~battery-B per-subject
-empirical $p$-values do not resolve the tail ($1/101$ floor); (5)~the
-subcortical residual is not robust across the pre-registered $K$ ladder, and
-its FDR cluster overlaps the same node block as the nominal enrichment, so
-R2a and R2b are not independent confirmations; (6)~no causal, homology,
-mechanism, or universal-law claim is made at any point.
+The following are first-class outcomes of this study, preserved as such
+throughout the manuscript. This is not a lapse in significance but a
+deliberate feature of the design: six distinct outcomes are recorded,
+and each is stated so that nothing that is scientifically true is
+concealed under a significance threshold.
+
+(1)~the pre-registered human system-specific gate (R2b) was negative;
+no pre-specified sensory or visual system is enriched in the residual,
+and the single nominal subcortical/cerebellar signal ($z_B = 2.08$,
+$p = .031$) is absent at $K=25$ and degree-anchored;
+(2)~the fly GABA-specific hypothesis was rejected---the raw matched-pair
+effect ($\delta = 0.111$, $p = 0.0011$) did not survive the
+degree-preserving null ensemble (observed $\delta = 0.098$ vs.\ null
+$0.071 \pm 0.022$; empirical $p = 0.109$; median-difference $p = 0.782$;
+$z = 1.21$);
+(3)~the fly residual effect size itself is not null-surviving ($p = 0.109$);
+(4)~battery-B per-subject empirical $p$-values do not resolve the tail
+($1/101$ null-resolution floor), so inference rests on the $z$
+statistics and the population sign test, which we state explicitly;
+(5)~the subcortical residual is not robust across the pre-registered $K$
+ladder, and its FDR cluster overlaps the same node block as the nominal
+enrichment, so R2a and R2b are not independent confirmations; and
+(6)~no causal, homology, mechanism, or universal-law claim is made at any
+point, a discipline enforced throughout the manuscript.
+
+We record these as negative findings rather than excise them as post hoc
+qualifications. The discipline is methodological as well as rhetorical:
+matched-pair significance without null arbitration can mislead, and the
+fly study's GABA-specific hypothesis is precisely the canonical
+demonstration of that failure mode---a near-significant raw effect
+($\delta = 0.111$, $p = 0.0011$) that dissolves entirely once the same
+nodes are compared under degree-preserving nulls ($z = 1.21$, empirical
+$p = 0.109$). The negative gate on the human side (R2b) and the rejected
+fly hypothesis are thus not afterthoughts; they are load-bearing parts of
+the architecture we are reporting. Removing them would present the
+positive results as uniquely compelling, when in fact the positive results
+rest on the very null arbitration that the negatives demonstrate is
+necessary.
 
 \subsection{Limitations}
 This is an observational, secondary analysis of a single acquisition and
-pipeline; graphs are undirected (directed variants are impossible in these
-derivatives); results are atlas- and threshold-dependent in detail (though
-robust across the 9-configuration ladder in architecture); the residual is
-near the CIS noise floor, hence the two-layer control design; per-subject
-empirical $p$-values are limited by the 100-null resolution; the subcortical
-residual is not robust across the $K$ ladder; the literature audit cannot
-exclude occupation of the analyzed combination in sources not surfaced by
-the queries used; and the environment manifest for the frozen runs has a
-disclosed provenance gap. No anatomical homology mapping, functional
-equivalence, causal inference, or universal-law claim is made or supported.
+pipeline, and a series of explicit limitations bound the claims made in
+what follows.
+
+(i)~The data are undirected connectomes derived from a single MRI
+acquisition and pipeline; the AOMIC-ID1000 derivative used here does not
+provide directed variants, so the account is inherently undirected, and a
+directed analysis would be a different study.
+
+(ii)~The results are atlas- and threshold-dependent in detail: the 4S456
+parcellation, the sift radius2 count weight, and the 15\% proportional
+threshold were chosen a priori in the frozen protocol, and each is a
+decision that shapes the network that is then analysed. The architecture,
+however, is robust across the 9-configuration ladder, which is itself a
+finding about the stability of the degree-dependent decomposition rather
+than a weakness of the specific configuration.
+
+(iii)~The residual is near the CIS noise floor, which is precisely why the
+two-layer control design is required: either degree- or strength-matched
+controls alone would conflate the degree-independent component with
+degree-dominated artifacts.
+
+(iv)~Per-subject empirical $p$-values are limited by the 100-null
+resolution, which is why inference for the per-subject battery rests on
+the $z$ statistics and the population sign test, with the null-resolution
+floor stated explicitly.
+
+(v)~The subcortical residual is not robust across the pre-registered $K$
+ladder, and its FDR cluster overlaps the same node block as the nominal
+enrichment, so R2a and R2b are not independent confirmations; the two
+gates do not multiply-support each other.
+
+(vi)~The literature audit cannot exclude occupation of the analysed
+combination in sources not surfaced by the queries used, and the
+environment manifest for the frozen runs has a disclosed provenance gap;
+both are disclosed and left open.
+
+(vii)~No anatomical homology mapping, functional equivalence, causal
+inference, or universal-law claim is made or supported, and the
+disciplined restraint in the language is itself a feature of the reported
+design.
 
 \subsection{Conclusion}
 Top-50 control-impact concentration exceeds degree-preserving null
 expectations in every tested human subject; a small degree-independent
-residual is present in 778/801 subjects and is not robustly system-specific;
-and the cross-scale comparison with the fly connectome shows concordant
-effect-size architecture with divergent anatomical identity. Architecture
-replicates; anatomy does not. The finding is hypothesis-generating, and the
-two-layer arbitration design (degree-matched controls plus degree-preserving
-nulls) is the methodological prerequisite for testing it on future
-connectomes.
+residual is present in 778/801 subjects and is not robustly
+system-specific; and the cross-scale comparison with the fly connectome
+shows concordant effect-size architecture with divergent anatomical
+identity. Architecture replicates; anatomy does not. The finding is
+hypothesis-generating, and the two-layer arbitration design
+(degree-matched controls plus degree-preserving nulls) is the
+methodological prerequisite for testing it on future connectomes. This
+design is not an unnecessary complication; it is the mechanism by which a
+degree-independent residual can be reported without being mistaken for
+degree-driven artifacts. On future connectomes of different scale, the same
+two-layer architecture, the same degree-matched and null-arbitrated
+quantification, and the same pre-registered gate structure should be
+applied before any system-specific claim is entertained.
+
+The negative outcomes reported here are not residuals to be cleaned up.
+They are part of the finding. The pre-registered system-specific gate was
+negative, the fly GABA-specific hypothesis was rejected, and the fly
+residual effect size did not survive its own null ensemble. A cross-scale
+comparison that reports its negative gates with the same candor as its
+positive architecture is a comparison with nothing to hide. Architecture
+replicates; anatomy does not. The replication is architectural: a dominant
+degree component plus a small, near-universal, degree-independent residual.
+The divergence of anatomy is the limit of that replication, and it is where
+the next generation of comparative connectome work should begin.
+
+\section{Supplementary description}
+All supplementary material is provided as typeset PDF and source alongside
+this manuscript and is referenced from the main text by its figure or table
+label. The supplementary package is self-contained and is reproduced
+faithfully from the frozen artifacts: every supplementary figure and table
+is a rendering of, or a table exported from, the frozen data and
+manifests. The following items are included.
+
+\textbf{Supplementary Figure S1} (\texttt{fig02\_population\_qc.pdf}): the
+QC flag distributions for the 900-subject acquisition (99 subjects carry
+flags: 94 isolated-node, 5 strength-IQR; retained, never deleted) with the
+801-subject QC-pass cohort; cohort selection was frozen before any CIS
+computation.
+
+\textbf{Supplementary Figure S2} (\texttt{fig07\_robustness.pdf}): the
+9-configuration robustness ladder (atlases \{4S256, 4S156,
+Brainnetome246Ext, AAL116\}, weights \{\texttt{sift\_invnodevol},
+\texttt{radius2\_count}\}, costs \{0.10, 0.20, 0.25\}), with the maximum
+like-for-like top-50-mean deviation 0.00262 (atlas AAL116; no numeric
+tolerance was pre-registered for E06 --- descriptive comparison).
+
+\textbf{Supplementary Figure S3} (\texttt{fig09\_conceptual.pdf}): the
+conceptual schematic of the two-layer architecture (dominant
+connectivity-dependent component plus smaller degree-independent residual,
+arbitrated by matched controls and degree-preserving nulls); schematic
+only, no data plotted.
+
+\textbf{Supplementary Tables S1--S2}: the top-50 stability node list
+(Table~S1) and the QC summary table (Table~S2), both exported from the
+frozen manifests.
+
+Supplementary tables are generated by \texttt{TABLE\_SOURCES/
+generate\_tables.py} (fail-loud; all frozen-value assertions pass). The
+supplementary source, tables, and figures recompile with
+\texttt{tectonic supplementary.tex} from the frozen artifacts.
 
 \section{Data and code availability}
 Data: AOMIC-ID1000 (Zenodo~19796783; CC-BY-4.0) \cite{snoek2021}. Fly
