@@ -1,0 +1,47 @@
+{
+  "n_subjects": 801,
+  "population_median_R": -2.667437432095842e-07,
+  "bootstrap_ci95": [
+    -9.251217903970852e-07,
+    6.720103395689732e-07
+  ],
+  "n_bootstrap": 10000,
+  "seed": 20270927,
+  "replication_fraction_median_R_positive": 0.4893882646691635,
+  "heterogeneity_IQR": 1.1417834843458933e-05,
+  "loso_max_abs_deviation": 5.3515279206030275e-08,
+  "gate_report": {
+    "n_subjects": 801,
+    "missing_subject_files": 0,
+    "primary_estimator": "M1_spline4_raw",
+    "median_abs_rho": 0.0326939383482375,
+    "mean_abs_rho": 0.038212533498173835,
+    "median_abs_rho_linear": 0.39554312857475077,
+    "paper1_cis_degree_rho": 0.943,
+    "gate_pass": true,
+    "quantiles_abs_rho": {
+      "0.05": 0.0030829128699534024,
+      "0.5": 0.0326939383482375,
+      "0.95": 0.09542590809548485
+    }
+  },
+  "cross_check_e03b": {
+    "available": true,
+    "kind": "same-pairs (Amendment 2)",
+    "n_merged": 801,
+    "spearman_delta_ours_vs_paper1": 0.785215689790296,
+    "spearman_p": 1.7404359531380532e-168,
+    "identity_max_abs_error": 0.007314132455367179,
+    "gate_pass": true
+  },
+  "replication_delta_ours": {
+    "replication_fraction_delta_ours_positive": 1.0,
+    "median_delta_ours": 0.1039697542533081,
+    "bootstrap_ci95": [
+      0.1006616257088846,
+      0.1072778827977315
+    ],
+    "n_subjects": 801,
+    "note": "proper subject-level replication statistic (Amendment 2): the matched-pair delta carries the effect, not the all-node median"
+  }
+}

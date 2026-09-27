@@ -1,0 +1,10 @@
+{
+  "primary_estimator": "M1_spline4_raw",
+  "thresholds": "within-subject ZR quantiles (frozen): top1/top5/bottom1/bottom5",
+  "n_positive_top1": 4005,
+  "n_positive_top5": 18429,
+  "n_negative_bottom1": 4007,
+  "n_negative_bottom5": 18427,
+  "n_subject_node_rows": 365256,
+  "note": "identity columns (system label) included for QC; biological interpretation of extremes deferred to later stages"
+}

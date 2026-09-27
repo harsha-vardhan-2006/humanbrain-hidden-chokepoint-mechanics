@@ -1,0 +1,16 @@
+{
+  "n_subjects": 801,
+  "missing_subject_files": 0,
+  "primary_estimator": "M1_spline4_raw",
+  "median_abs_rho": 0.0326939383482375,
+  "mean_abs_rho": 0.038212533498173835,
+  "median_abs_rho_linear": 0.39554312857475077,
+  "paper1_cis_degree_rho": 0.943,
+  "gate_pass": true,
+  "quantiles_abs_rho": {
+    "0.05": 0.0030829128699534024,
+    "0.5": 0.0326939383482375,
+    "0.95": 0.09542590809548485
+  },
+  "runtime_s": 20.7
+}

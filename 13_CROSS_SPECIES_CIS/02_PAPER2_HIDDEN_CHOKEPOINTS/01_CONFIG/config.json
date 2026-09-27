@@ -1,0 +1,100 @@
+{
+  "identity": {
+    "paper": 2,
+    "working_title": "Hidden Chokepoints: Graph-Geometric Determinants of Degree-Independent Control Impact in Connectome Networks",
+    "frozen_utc": "2026-09-27T17:21:47+00:00",
+    "amendments": [
+      1
+    ]
+  },
+  "paths": {
+    "subject_cis_dir": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\04_CIS\\subject_cis",
+    "qc_primary": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\03_BASELINE\\qc_primary.csv",
+    "e03_summary": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\04_CIS\\e03_summary.json",
+    "e03b_per_subject": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\04_CIS\\degree_strength_control_per_subject.csv",
+    "e03b_pairs": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\04_CIS\\degree_strength_control_results.csv",
+    "atlas_labels": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\00_MANIFEST\\manifests\\atlas_4S456_system_labels.csv",
+    "out_degree_control": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\02_PAPER2_HIDDEN_CHOKEPOINTS\\04_DEGREE_CONTROL",
+    "out_figures": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\02_PAPER2_HIDDEN_CHOKEPOINTS\\09_FIGURES",
+    "out_tables": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\02_PAPER2_HIDDEN_CHOKEPOINTS\\10_TABLES",
+    "out_logs": "D:\\humanbrain\\humanbrain\\13_CROSS_SPECIES_CIS\\02_PAPER2_HIDDEN_CHOKEPOINTS\\14_LOGS",
+    "fly_e10b": "D:\\humanbrain\\fruitfly\\results\\final\\e10b_final.json"
+  },
+  "cohort": {
+    "n_nodes": 456,
+    "qc_source": "qc_primary.csv:qc_pass == True (Paper 1 frozen flags)",
+    "secondary_full900": "descriptive only, never headline"
+  },
+  "residualization": {
+    "primary": "M1_spline4_raw",
+    "estimators": {
+      "M1_spline4_raw": {
+        "kind": "spline_ols",
+        "y": "cis",
+        "x": "degree",
+        "df": 4,
+        "amendment": 2
+      },
+      "M2_linear": {
+        "kind": "ols",
+        "y": "cis",
+        "x": "degree"
+      },
+      "P_df2": {
+        "kind": "poly",
+        "df": 2
+      },
+      "P_df3": {
+        "kind": "poly",
+        "df": 3
+      },
+      "P_df5": {
+        "kind": "poly",
+        "df": 5
+      },
+      "P_df6": {
+        "kind": "poly",
+        "df": 6
+      },
+      "Q_bin20": {
+        "kind": "quantile_bins",
+        "q": 20,
+        "agg": "median"
+      }
+    },
+    "orthogonality_gate": {
+      "statistic": "Spearman(R_i, k_i) per subject",
+      "pass": "median |rho_s| < 0.05 AND mean |rho_s| < 0.1 (primary estimator)"
+    },
+    "cross_check": {
+      "source": "e03b_per_subject (matched-pair delta, Paper 1)",
+      "expectation": "sign agreement >= 90% on per-subject median-R sign vs delta sign; subject-level Spearman(median_R, delta) reported; |rho| < 0.5 blocks"
+    }
+  },
+  "extremes": {
+    "thresholds_zr": {
+      "top": [
+        0.01,
+        0.05
+      ],
+      "bottom": [
+        0.01,
+        0.05
+      ]
+    },
+    "note": "within-subject percentiles of ZR; pre-registered before any identity inspection"
+  },
+  "seeds": {
+    "bootstrap": 20270927,
+    "nulls_cis": "100+i (Stage 15)",
+    "nulls_feature": 20270927
+  },
+  "bootstrap": {
+    "n_resamples": 10000,
+    "unit": "subject"
+  },
+  "provenance": {
+    "git_sha": "2a8a3eabfbe11d70d2942482e5848ddeaf3b8972",
+    "writer": "freeze_config.py"
+  }
+}

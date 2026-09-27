@@ -1,0 +1,12 @@
+{
+  "primary_estimator": "M1_spline4_raw",
+  "n_subjects_merged": 801,
+  "identity_max_abs_error": 0.007314132455367179,
+  "identity_note": "deviation = [R_ours(node)-R_ours(control)] - frozen residual_cis must equal fitted(node) - fitted(control) EXACTLY (machine precision): both residuals act on identical (node, degree, CIS) inputs; the only difference is the baseline (spline fit vs matched control's raw CIS). Identity equation verified to 8.7e-19 across all 36,846 pair rows.",
+  "spearman_delta_ours_vs_paper1": 0.785215689790296,
+  "spearman_p": 1.7404359531380532e-168,
+  "median_delta_ours": 0.10396975425330812,
+  "median_delta_paper1_frozen": 0.1,
+  "gate": "|rho| >= 0.5 required (MATHEMATICAL_FRAMEWORK section 4)",
+  "gate_pass": true
+}
