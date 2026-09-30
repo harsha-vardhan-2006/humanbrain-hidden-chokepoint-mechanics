@@ -1,5 +1,0 @@
-source_zip: connectomes_part_1.zip
-source_member: sub-0001_run-1_space-T1w_connectivity.mat
-field: atlas_4S456Parcels_region_labels
-system_rule: strip LH_/RH_ prefix, match 7-network prefix, else Subcortical_Cerebellar
-extracted: 2026-09-23

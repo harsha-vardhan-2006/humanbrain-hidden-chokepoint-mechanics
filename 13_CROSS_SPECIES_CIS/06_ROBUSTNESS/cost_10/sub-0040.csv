@@ -1,2 +1,0 @@
-cis_mean,cis_median,cis_max,top50_mean,topdecile_mean,gini_abs_cis,subject,condition,atlas,variant,cost,e0,spearman_cis_degree,n_nodes
-0.00010274718005328593,-1.459379995670592e-05,0.00987978464432833,0.0015604110494490608,0.001640731782002225,0.5476693006052544,40,cost_10,atlas_4S456Parcels,sift_radius2_count_connectivity,0.1,0.48714494569757727,0.8987275289003093,456

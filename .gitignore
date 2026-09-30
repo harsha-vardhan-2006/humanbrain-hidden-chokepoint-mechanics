@@ -1,43 +1,24 @@
-# Whitelist approach: the git layer tracks the cross-species CIS study,
-# acquisition metadata/logs, and the release checksum. All heavy binary
-# data (volumes, connectome zips, caches, quarantines) stays out of git.
+# Whitelist approach: track the Paper 2 study tree (flattened to root),
+# the release checksum manifest, and repo docs. Heavy regenerable data
+# (raw per-null records, per-subject caches, release ZIP) stays out.
 
 /*
 !/.gitignore
 !/LICENSE
-!/README_ACQUISITION.md
-!/00_Metadata/
-!/99_Logs/
-!/13_CROSS_SPECIES_CIS/
-!/dist/SHA256SUMS_cross_species_cis.txt
+!/README.md
+!/PROVENANCE.md
+!/dist/SHA256SUMS_paper2.txt
 
-# Regenerable / heavy data inside the tracked tree
-13_CROSS_SPECIES_CIS/02_PREPROCESSING/cache_parts/
-13_CROSS_SPECIES_CIS/02_PREPROCESSING/quarantined/
-13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/quarantined/
-
-# Paper 2: heavy regenerable artifacts stay out of git (scripts + summary
-# JSON/CSV tables + verification gates ARE tracked; the raw per-null records
-# and per-subject caches are reproducible from the frozen seeds)
-13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/06_NULL_MODELS/null_records_checkpoint.jsonl
-13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/03_FEATURE_EXTRACTION/_per_subject_cache/
+# Regenerable / heavy artifacts (reproducible from frozen seeds)
+06_NULL_MODELS/null_records_checkpoint.jsonl
+03_FEATURE_EXTRACTION/_per_subject_cache/
+dist/*.zip
 __pycache__/
 *.pyc
 *.tmp
 .pytest_cache/
 
-# LaTeX intermediates (Tectonic cleans up by default; keep these out of git
-# for any future engine switch)
-*.aux
-*.log
-*.blg
-*.bbl
-*.out
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-
-# Secrets / env (defense in depth; none exist in tree)
+# Secrets / env (defense in depth)
 .env
 *.pem
 *.key

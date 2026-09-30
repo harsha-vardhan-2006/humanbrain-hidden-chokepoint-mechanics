@@ -1,4 +1,0 @@
-outcome,value,status
-O1: topological chokepoints exist (CIS>0),max population-mean CIS = 0.0046 (node 414); top50_rate max = 1.00 (node 400),SUPPORTED (observed + null-arbitrated: battery A/B)
-O2: CIS structure beyond degree,residual>0 in 778/801 subjects (sign p=2.64e-197); Cliff's delta 0.100,"SUPPORTED (fixed topology + null arbitration; R2a POS, R2b NEG)"
-O3: cross-scale architectural match (fly),fly delta 0.098 vs human 0.100; enrichment designs matched (E12 template); see 07_CROSS_SCALE,RESOLVED: see RESOLUTION.md verdict

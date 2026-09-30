@@ -1,7 +1,0 @@
-quantity,fly_value,human_value,comparison_type,note
-CIS distribution shift (target vs matched controls),Cliff's delta = 0.0979,Cliff's delta = 0.100 (median across 801 subjects; residual CIS vs degree-matched controls),DIRECT,"same effect-size statistic; fly cells vs matched cells, human nodes vs degree-matched nodes"
-Null survival of group-level CIS effect (degree-preserving),"z = 1.21, p = 0.109 (NOT survived)",battery B (E04b/E05): see NULL_MODEL_REPORT; top-50 median vs 100 degree-preserving nulls,DIRECT,100-null degree-preserving ensembles on both scales
-Top-K enrichment vs tested universe (control A),"K=50 visual_centrifugal: obs 21, enrich 11.7x, z_A = 14.5",E05 system enrichment z_A per system,NORMALIZED,fly: cell classes; human: macro-systems; both label-shuffle
-Top-K enrichment vs degree-matched expectation (control B),"K=50: E_B 8.0, enrich 2.63x, z_B = 5.30, p ~1e-4",E05 z_B per system (degree-matched peer pools),DIRECT,identical two-control design (E12-strong template)
-Chokepoint catalogue depth,50 nodes catalogued; 13 A_strong_chokepoint,top-100 catalogue (human_chokepoint_catalogue.csv); A/B classing pending E05 q-values,QUALITATIVE,class labels map to human systems via the 4S456 labels
-Visual-system share of top-50,"80% (visual_system_fraction_top50, e14_v2_summary)",2% of top-50 nodes in Vis systems,DIRECT,fractions are scale-free

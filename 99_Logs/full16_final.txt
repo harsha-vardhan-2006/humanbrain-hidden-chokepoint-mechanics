@@ -1,5 +1,0 @@
-good_copy=D:\HumanBrain\01_3D_Volumes\Histological_Space\full16_100um_optbal.nii.gz
-bytes=1444555927 (expected 1444555927) size_ok=True
-gzip_CRC_OK uncompressed=5186784448
-sha256=f760117a72db2a5396440eb81c683ce64da7b003b8d9d19d99c0f8f1c2d3bbd4
-removed superseded quarantine: D:\HumanBrain\99_Logs\QUARANTINE\full16_100um_optbal.nii.gz.quarantine (gzip-CRC-invalid seed bytes; good copy re-downloaded and verified)

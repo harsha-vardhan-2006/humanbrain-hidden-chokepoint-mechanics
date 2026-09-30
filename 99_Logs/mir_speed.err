@@ -1,3 +1,0 @@
-curl: (3) URL rejected: Bad hostname
-curl: (6) Could not resolve host: B
-curl: (28) Operation timed out after 60003 milliseconds with 2293445 out of 9968092 bytes received

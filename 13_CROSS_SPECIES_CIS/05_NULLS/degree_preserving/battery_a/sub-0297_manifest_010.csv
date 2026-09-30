@@ -1,6 +1,0 @@
-subject,null_id,seed,rewire_accepted,n_swaps_factor,attempts,cis_runtime_s,status
-297,10,110,77024,10,1,25.012,ok
-297,11,111,76601,10,1,24.659,ok
-297,12,112,76811,10,1,26.034,ok
-297,13,113,76889,10,1,22.007,ok
-297,14,114,76862,10,1,24.898,ok

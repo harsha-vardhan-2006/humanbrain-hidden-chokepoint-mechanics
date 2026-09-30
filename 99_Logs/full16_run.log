@@ -1,5 +1,0 @@
-start pos=1346740702 total=1444555927
-progress 1413849566/1444555927 (97.9%) 3.75 MB/s
-progress 1444555927/1444555927 (100.0%) 2.65 MB/s
-size complete; gzip CRC check
-gzip CRC FAILED: Error -3 while decompressing data: invalid stored block lengths -> quarantined

@@ -1,6 +1,0 @@
-subject,null_id,degree_per_node_exact,edges_match,n_edges_null,self_loops,binary_values_only,giant_frac
-14,45,True,True,15561,0,True,1.0
-14,46,True,True,15561,0,True,1.0
-14,47,True,True,15561,0,True,1.0
-14,48,True,True,15561,0,True,1.0
-14,49,True,True,15561,0,True,1.0

@@ -1,2 +1,0 @@
-subject,top50_median_observed,top50_median_null_mean,top50_median_null_sd,z_vs_null,emp_p_ge,n_nulls,null_source
-111,0.0007909713933826499,0.0006038875435478985,1.687911026237998e-05,11.083750679188482,0.009900990099009901,100,battery_a_reuse

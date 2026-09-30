@@ -1,4 +1,0 @@
-test,degree_per_node_exact,edges_match,n_edges_null,self_loops,binary_values_only,giant_frac,n_swaps,accepted
-hub_pendant,True,True,15,0,True,0.5,150,0
-dense_p60,True,True,1078,0,True,1.0,10780,1071
-ring_k2,True,True,40,0,True,0.45,400,366

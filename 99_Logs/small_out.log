@@ -1,6 +1,0 @@
-small: 50/228 processed | ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1110s
-small: 100/228 processed | ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1110s
-small: 150/228 processed | ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1110s
-small: 200/228 processed | ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1111s
-small: 228/228 processed | ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1111s
-small FINAL: ok=228 skip=0 fail=0 quar=0 bytes=1.36GB elapsed=1111s

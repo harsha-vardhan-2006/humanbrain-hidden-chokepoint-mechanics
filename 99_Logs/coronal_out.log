@@ -1,6 +1,0 @@
-coronal: 50/7404 processed | ok=51 skip=0 fail=0 quar=0 bytes=0.01GB elapsed=14s
-coronal: 100/7404 processed | ok=100 skip=0 fail=0 quar=0 bytes=0.02GB elapsed=25s
-coronal: 150/7404 processed | ok=153 skip=0 fail=0 quar=0 bytes=0.05GB elapsed=51s
-coronal: 200/7404 processed | ok=211 skip=0 fail=0 quar=0 bytes=0.12GB elapsed=106s
-coronal: 250/7404 processed | ok=250 skip=0 fail=0 quar=0 bytes=0.17GB elapsed=143s
-coronal: 300/7404 processed | ok=300 skip=0 fail=0 quar=0 bytes=0.25GB elapsed=213s

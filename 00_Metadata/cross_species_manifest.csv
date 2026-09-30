@@ -1,6 +1,0 @@
-pair_id,fly_asset,human_asset,comparability_tag,reason
-CP01,FAFB v783 whole-brain EM volume (neuropil),BigBrain full16/full8 optbal histological volumes (histological space),NOT_DIRECTLY_COMPARABLE,"BigBrain provides NO connectome; FAFB provides no cellular-resolution anatomy of human brain. Both whole-brain structural datasets but different modalities, species, and scales."
-CP02,FAFB hemisphere/side separation of neurons (L/R),BigBrain hemispheres_mask_*.nii.gz (L/R masks),APPROXIMATELY_COMPARABLE,Both encode bilateral symmetry structure; resolution and semantics differ (neuron level vs voxel level).
-CP03,"FAFB fly neuropils (e.g., optic lobes, central brain compartments)","BigBrain cortical parcellations (Brainnetome, DKT, Economo, Schaefer2018, HCP-MMP)",APPROXIMATELY_COMPARABLE,Region-level organizational comparison only. NO homology claims between fly neuropils and human cortical areas.
-CP04,FAFB neuron/synapse counts (connectome topology),BigBrain classified volume class statistics (grey/white/CSF fractions),NOT_DIRECTLY_COMPARABLE,Connectome topology vs tissue-class volumetry: no common graph space.
-CP05,FAFB visual-system subconnectomes (optic lobe circuits),BigBrain occipital/cerebellum ROI volumes at 100um,APPROXIMATELY_COMPARABLE,Coarse sensory-region correspondence only (visual processing regions); no cell-type or circuit homology implied.

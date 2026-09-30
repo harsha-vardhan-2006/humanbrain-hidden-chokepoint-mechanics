@@ -1,4 +1,0 @@
-UA: None -> status 200 | len hdr: 677869555 | final url: https://zenodo.org/api/records/19796783/files/connectomes_part_1.zip/content
-   received first 3145728 bytes OK
-UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) -> status 200 | len hdr: 677869555 | final url: https://zenodo.org/api/records/19796783/files/connectomes_part_1.zip/content
-   received first 3145728 bytes OK
