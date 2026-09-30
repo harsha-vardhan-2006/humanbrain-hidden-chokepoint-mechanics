@@ -1,0 +1,143 @@
+% =========================================================================
+% PAPER 2 -- Supplementary Material (typeset key tables)
+% The complete machine-readable table set (S0-S10) is GENERATED from
+% frozen artifacts: 13_MANUSCRIPT/SUPPLEMENTARY_TABLES.md
+% (make_supplementary.py). This PDF re-typesets the decision-relevant
+% tables and points to the generated file for the rest, so the two can
+% never disagree.
+% =========================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\captionsetup{font=small}
+
+\title{\textbf{Supplementary Material}\\[4pt]
+\large Degree-Independent Control Impact in the Human Structural
+Connectome: Graph-Geometric Associations and Degree-Preserving Null
+Arbitration (Paper 2, v2.0.1)}
+\author{Harsha Vardhan Malipeddi}
+\date{September 30, 2026}
+
+\begin{document}
+\maketitle
+
+\noindent
+\textbf{About this document.} Tables S0--S10 are auto-generated from the
+frozen repository artifacts by
+\texttt{13\_MANUSCRIPT/make\_supplementary.py} and stored as
+\texttt{SUPPLEMENTARY\_TABLES.md} (machine-readable, regenerate with
+\texttt{python run\_all.py}). This PDF re-typesets the
+decision-relevant subset; numbers are identical by construction.
+
+\section{S0. Protocol amendments and timing}
+\begin{table}[h]\centering\small
+\caption{All amendments were pre-unblinding implementation repairs; no
+frozen gate, threshold, seed, or hypothesis was altered.}
+\begin{tabular}{p{1.2cm}p{5.2cm}p{3.4cm}p{3.6cm}}
+\toprule
+Am. & Problem & Discovery point & Resolution \\
+\midrule
+A1 & $\log_{10}(\mathrm{CIS}+10^{-6})$ estimator invalid: CIS is signed; log of negative CIS $\to$ NaN & first Stage-3 execution (QC figure failure) & estimator re-specified pre-unblinding \\
+A2 & (1) asinh retransformation biased (Jensen; $\rho(R,\mathrm{deg})=-0.063$); (2) cross-check unit mismatch (all-node vs pair-only) & pre-unblinding gate check & final M1 = raw-CIS spline df\,=\,4; same-pairs cross-check \\
+A3 & redundancy feature used boolean adjacency (OR-semantics): redundancy $\equiv$ clustering on all rows & pre-analysis integrity sweep (Stages 7+ not run) & int32 cast; caches regenerated; unit assertion added \\
+FREEZE & study completion & 2026-09-30 & study tree declared read-only \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{S2. Univariate associations (Stage 8, all 12 features)}
+\begin{table}[h]\centering\small
+\caption{Within-subject median Spearman $\rho(R,\cdot)$; $q$ = BH-FDR.
+All features $q < 3.4\times10^{-28}$. Values quoted verbatim from
+\texttt{05\_MECHANISM\_ANALYSIS/UNIVARIATE\_RESULTS.json}.}
+\begin{tabular}{lrrr}
+\toprule
+Feature & median $\rho$ & IQR & $q$ \\
+\midrule
+bridge & $+0.4985$ & 0.1007 & $<10^{-300}$ \\
+closeness\_d & $+0.2489$ & 0.0770 & $<10^{-300}$ \\
+redundancy & $-0.2179$ & 0.0835 & $<10^{-300}$ \\
+participation & $-0.1676$ & 0.1310 & $5.5\times10^{-256}$ \\
+clustering & $-0.1658$ & 0.0888 & $<10^{-300}$ \\
+betweenness & $+0.1333$ & 0.0759 & $<10^{-300}$ \\
+eigenvector & $+0.0834$ & 0.0745 & $6.5\times10^{-199}$ \\
+strength & $-0.0689$ & 0.0722 & $2.3\times10^{-173}$ \\
+kcore & $+0.0556$ & 0.1352 & $6.1\times10^{-44}$ \\
+pagerank & $-0.0379$ & 0.0555 & $1.1\times10^{-110}$ \\
+degree & $-0.0255$ & 0.0534 & $8.9\times10^{-58}$ \\
+within\_module\_z & $-0.0186$ & 0.0647 & $3.4\times10^{-28}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{S6. Degree-preserving null arbitration (Stage 15)}
+\begin{table}[h]\centering\small
+\caption{12 subjects $\times$ 100 nulls, seed 20270927; exact degree
+preservation verified per null; full CIS + feature recomputation per null.
+Deep-verified from the 1{,}200 raw records by independent gate V09
+(seeds unique; degree preservation exact; stored $R_{\mathrm{null}}$
+re-derives bit-exactly via the 20-bin proxy; pooled statistics reproduce
+to $10^{-9}$).}
+\begin{tabular}{lrrrrl}
+\toprule
+Feature & Obs. $|\mathrm{med}\,\rho|$ & Null med $\rho$ & Null IQR & Null $|\rho|$ p95 & Verdict \\
+\midrule
+bridge & 0.4985 & $-0.5957$ & 0.0502 & 0.6538 & inside band \\
+clustering & 0.1658 & $+0.6846$ & 0.0443 & 0.7314 & inside band \\
+redundancy & 0.2179 & $-0.6228$ & 0.0469 & 0.6807 & inside band \\
+participation & 0.1676 & $+0.3909$ & 0.0695 & 0.4609 & inside band \\
+betweenness & 0.1333 & $+0.1675$ & 0.0342 & 0.2102 & inside band \\
+within-module $z$ & 0.0186 & $+0.0942$ & 0.0448 & 0.1499 & inside band \\
+eigenvector & 0.0834 & $+0.0926$ & 0.0317 & 0.1304 & inside band \\
+k-core & 0.0556 & $+0.0627$ & 0.0323 & 0.1003 & inside band \\
+PageRank & 0.0379 & $+0.0618$ & 0.0304 & 0.0961 & inside band \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Verdict: Outcome C.} No observed association exceeds its
+null p95 band; the mechanism claim is null-qualified.
+
+\section{S6b. Null-estimator (proxy) equivalence validation}
+\begin{table}[h]\centering\small
+\caption{20-bin quantile-median proxy vs frozen spline on observed data
+(12 null subjects; Stage-8 features). The arbitrated statistic
+$\rho(R,\cdot)$ is stable across residualizations; the proxy yields
+slightly \emph{stronger} associations, so it cannot manufacture Outcome C.}
+\begin{tabular}{lrrrr}
+\toprule
+Feature & med $\rho$ (spline) & med $\rho$ (20-bin) & med $|\Delta\rho|$ & p95 $|\Delta\rho|$ \\
+\midrule
+bridge & 0.4661 & 0.5206 & 0.0436 & 0.1258 \\
+betweenness & 0.1028 & 0.1425 & 0.0504 & 0.1333 \\
+clustering & $-0.1469$ & $-0.1686$ & 0.0479 & 0.1319 \\
+eigenvector & 0.1078 & 0.1331 & 0.0480 & 0.1341 \\
+kcore & 0.0361 & 0.0750 & 0.0647 & 0.1354 \\
+pagerank & $-0.0460$ & $-0.0074$ & 0.0466 & 0.1450 \\
+participation & $-0.1173$ & $-0.0697$ & 0.0639 & 0.1041 \\
+redundancy & $-0.1826$ & $-0.2011$ & 0.0467 & 0.1158 \\
+within-module $z$ & $-0.0211$ & $+0.0114$ & 0.0482 & 0.1417 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Median $|\Delta\rho| = 0.050$ over $12\times9$ subject--feature pairs vs
+null bands of 0.10--0.73. Point-level residuals differ in the tails
+(median Spearman$(R_{\mathrm{spline}}, R_{20}) = 0.865$); both are
+degree-orthogonal ($|\rho(R,\mathrm{deg})|\le 0.041$).
+
+\section{Remaining tables (machine-readable)}
+The following are provided in \texttt{SUPPLEMENTARY\_TABLES.md} (generated,
+artifact-backed): \textbf{S1} feature definitions; \textbf{S3} feature
+correlation matrix (prune rule $|\rho|\ge0.9$); \textbf{S4} nested models;
+\textbf{S5} subject-aware CR1 regression; \textbf{S7} robustness matrix
+(R1/R2/R5); \textbf{S8} full biological enrichment (all categories, both
+sets); \textbf{S9/S9b} chokepoint candidates and threshold sensitivity;
+\textbf{S10} human-vs-fly comparison (fly negative preserved verbatim).
+
+\end{document}

@@ -7,7 +7,31 @@
 !/LICENSE
 !/README.md
 !/PROVENANCE.md
+!/CITATION.cff
+!/requirements.txt
+!/run_all.py
 !/dist/SHA256SUMS_paper2.txt
+!/00_DOCS/
+!/01_CONFIG/
+!/03_FEATURE_EXTRACTION/
+!/04_DEGREE_CONTROL/
+!/05_MECHANISM_ANALYSIS/
+!/06_NULL_MODELS/
+!/07_ROBUSTNESS/
+!/08_STATISTICS/
+!/09_FIGURES/
+!/10_TABLES/
+!/11_CASE_STUDIES/
+!/12_SYNTHESIS/
+!/13_MANUSCRIPT/
+!/14_LOGS/
+!/15_TESTS/
+!/AUDIT/
+!/QC/
+!/data/
+!/results_annotation/
+!/scripts_annotation/
+!/run_downstream_chain.sh
 
 # Regenerable / heavy artifacts (reproducible from frozen seeds)
 06_NULL_MODELS/null_records_checkpoint.jsonl

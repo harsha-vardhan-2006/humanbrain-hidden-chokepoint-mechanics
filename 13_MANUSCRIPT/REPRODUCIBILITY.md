@@ -98,3 +98,18 @@ bash run_downstream_chain.sh && py -3.13 09_FIGURES/make_figures.py \
 - GPU: none required; the full design ran on local CPU. A Kaggle GPU arm
   was prepared (`08_STATISTICS/dl_kaggle/`) for the optional deep-learning
   benchmark only and is not needed for any headline number.
+
+## Cross-platform entry point (added v2.0.1)
+
+`python run_all.py [--verify|--qc|--proxy|--all]` is the canonical command
+on any OS (no `py` launcher required). `requirements.txt` pins the exact
+environment (Python 3.13.2, numpy 2.4.2, pandas 2.3.3, scipy 1.18.0,
+pyarrow 23.0.1, matplotlib 3.11.2).
+
+## Archival checksums (v2.0.1)
+
+```
+e01852cdf4a2f00f63531dc108b35c3a5b005714713cc443a1760d07ecde7864  06_NULL_MODELS/null_records_checkpoint.jsonl  (raw 1,200-null ensemble; gitignored, ships in release archive - ARCHIVE ON ZENODO WITH THIS HASH)
+36b01b6f59e449c9d7def704b214e6a9d42215508cf920387fe0ff2f605233ca  13_MANUSCRIPT/SUBMISSION/PAPER2_MAIN.pdf
+789463efe1319cbbeffe3d6ae8993a357d30c69223534eee77617a82ed52d7f4  13_MANUSCRIPT/SUBMISSION/SUPPLEMENTARY.pdf
+```

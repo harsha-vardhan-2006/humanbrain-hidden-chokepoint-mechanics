@@ -27,3 +27,20 @@ Percentages are NOT manufactured; counts are literal.
 Verdict: **RELEASED** (v2.0.0, 2026-09-30). Scientific headline is bounded:
 residual real + learnable; mechanism null-qualified (Outcome C);
 chokepoint = operational label only.
+
+## ADDENDUM v2.0.1 (2026-09-30) — external-audit response
+
+The Stage-24 verifier was rewritten as a genuine independent verification
+layer (V06/V07 CV recomputed from raw matrices; V09 deep-verified over all
+1,200 raw null records: unique seeds, exact degree preservation, bit-exact
+R_null re-derivation, pooled statistics to 1e-9, Outcome C reproduced;
+V10/V11 numeric rechecks). New V11 surfaced one documentation error,
+now corrected: negative-control margins were previously overgeneralized
+as ">= 0.13 for all features"; per-feature margins are large for strong
+associators (bridge 0.494) and small for weak ones (within-module z 0.014,
+k-core 0.052), with all 8 features exceeding both bands. Null-estimator
+proxy equivalence validated on observed data (median |delta rho| = 0.050
+vs null bands 0.10-0.73; proxy cannot manufacture Outcome C).
+Submission package added: SUBMISSION/ (LaTeX + PDFs), SUPPLEMENTARY_TABLES
+(S0-S10, generated), CITATION.cff, requirements.txt, run_all.py.
+Scientific results unchanged. `run_all.py --verify`: 12/12 PASS.

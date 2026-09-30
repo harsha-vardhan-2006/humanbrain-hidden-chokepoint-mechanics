@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: >-
+  If you use this work, please cite it using the metadata below.
+title: >-
+  Degree-Independent Control Impact in the Human Structural Connectome:
+  Graph-Geometric Associations and Degree-Preserving Null Arbitration
+  (Paper 2, cross-species CIS series; frozen release v2.0.1)
+authors:
+  - family-names: Malipeddi
+    given-names: Harsha Vardhan
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: Independent Researcher
+version: v2.0.1
+date-released: "2026-09-30"
+license: MIT
+repository-code: "https://github.com/harsha-vardhan-2006/humanbrain-hidden-chokepoint-mechanics"
+abstract: >-
+  A degree-independent control-impact (CIS) residual replicates across all
+  801 QC-pass subjects of the AOMIC ID1000 structural connectome cohort
+  (delta = 0.104, CI [0.1007, 0.1073]) and is predictable out-of-sample
+  from measured network features (ridge cv-R2 = 0.574; degree-only ~ 0).
+  Under 1,200 exact degree-preserving nulls with per-null full CIS and
+  feature recomputation, every observed feature-residual association falls
+  inside its null p95 band (pre-registered Outcome C): the proposed
+  graph-geometric mechanism is not established, and the "hidden
+  chokepoint" remains an operational construct only. The fly connectome's
+  residual fails its degree-preserving null identically (z = 1.21,
+  p = 0.109, preserved negative).
+keywords:
+  - structural connectome
+  - network control theory
+  - degree confounding
+  - degree-preserving null models
+  - negative result
+  - human connectome
+  - Drosophila connectome

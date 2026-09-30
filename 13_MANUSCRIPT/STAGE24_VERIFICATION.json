@@ -10,15 +10,15 @@
     },
     {
       "id": "V02",
-      "check": "same-pairs cross-check rho >= 0.5",
+      "check": "same-pairs cross-check rho(delta_ours, delta_paper1) >= 0.5",
       "pass": true,
-      "detail": "rho = 0.785 (frozen Stage 3b artifact)"
+      "detail": "rho = 0.785 over 801 subjects (recomputed)"
     },
     {
       "id": "V03",
       "check": "residual effect positive in all QC-pass subjects",
       "pass": true,
-      "detail": "801/801 subjects with delta_ours > 0 (median 0.1040, CI [0.1007, 0.1073])"
+      "detail": "801/801 subjects with delta_ours > 0 (recomputed)"
     },
     {
       "id": "V04",
@@ -34,15 +34,15 @@
     },
     {
       "id": "V06",
-      "check": "nested models: M4 delta_cvR2 vs M1 reported",
+      "check": "nested models M1/M4 cv-R2 independently recomputed",
       "pass": true,
-      "detail": "M1 cvR2 = -0.0000, M4 cvR2 = 0.2942, delta = +0.2942"
+      "detail": "recomputed M1 = -0.000001 vs frozen -0.000001; recomputed M4 = 0.294182 vs frozen 0.294182; delta = +0.2942"
     },
     {
       "id": "V07",
-      "check": "ML benchmark: degree_only vs full ridge reported",
+      "check": "ML benchmark degree-only/ridge cv-R2 independently recomputed",
       "pass": true,
-      "detail": "degree_only = -0.0001, ridge = 0.5740, delta = +0.5740"
+      "detail": "recomputed degree_only = -0.000060 vs frozen -0.000060; recomputed ridge = 0.573957 vs frozen 0.573957; recomputed permuted control = 0.002389 vs frozen 0.002389"
     },
     {
       "id": "V08",
@@ -52,21 +52,21 @@
     },
     {
       "id": "V09",
-      "check": "null arbitration recorded for every feature",
+      "check": "null arbitration DEEP-verified from 1200 raw null records",
       "pass": true,
-      "detail": "9 features arbitrated; exceed null p95: NONE (Outcome C for all)"
+      "detail": "records = 1200/1200, seeds unique: 1200 == 1200, per-subject counts == 100: True; degree preservation violations: 0 (max dev 0.0); R_null proxy re-derivation mismatches: 0 (max dev 0.00e+00); pooled null-stat mismatches: none; observed-stat mismatches: none; Outcome C reproduced: True (exceed p95: NONE)"
     },
     {
       "id": "V10",
-      "check": "robustness matrix has R1/R2/R5 families",
+      "check": "robustness: R1/R2/R5 grids present + sign-consistent vs Stage 8",
       "pass": true,
-      "detail": "families present: ['R1_estimator', 'R2_threshold', 'R5_winsorized_R']"
+      "detail": "families: ['R1_estimator', 'R2_threshold', 'R5_winsorized_R']; sign violations: none"
     },
     {
       "id": "V11",
-      "check": "negative controls recorded (NC1/NC2 per feature)",
+      "check": "negative controls: observed exceeds NC1/NC2 p95 per feature",
       "pass": true,
-      "detail": "obs exceeds NC1 band: ['betweenness', 'closeness_d', 'redundancy', 'bridge', 'participation', 'within_module_z', 'kcore', 'clustering']"
+      "detail": "8/8 features rechecked; violations: none; min margin = 0.0142 (weak features wmz/kcore expected small)"
     },
     {
       "id": "V12",

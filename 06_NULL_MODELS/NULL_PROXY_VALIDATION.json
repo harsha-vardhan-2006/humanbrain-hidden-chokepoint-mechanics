@@ -1,0 +1,119 @@
+{
+  "purpose": "validate the Stage-15 20-bin null residualization proxy against the frozen M1 spline on observed data",
+  "n_subjects_total": 801,
+  "n_subjects_null_ensemble": 12,
+  "null_subjects": [
+    "0013",
+    "0186",
+    "0252",
+    "0350",
+    "0373",
+    "0399",
+    "0490",
+    "0509",
+    "0694",
+    "0794",
+    "0815",
+    "0898"
+  ],
+  "null_ensemble_median": {
+    "spearman_Rspline_R20": 0.8652307538091746,
+    "rmse_over_iqr": 1.8456321311381445,
+    "maxdiff_over_iqr": 26.87566098106136,
+    "abs_rho_degree_spline": 0.04109189702462263,
+    "abs_rho_degree_20bin": 0.01647799793428069
+  },
+  "null_ensemble_range": {
+    "spearman_Rspline_R20": [
+      0.7212784400120408,
+      0.9062220453236005
+    ],
+    "rmse_over_iqr": [
+      1.3342293273508683,
+      2.6082192902316965
+    ],
+    "maxdiff_over_iqr": [
+      15.419816911489288,
+      40.52714181242566
+    ],
+    "abs_rho_degree_spline": [
+      0.0024648062902344757,
+      0.10601969540582432
+    ],
+    "abs_rho_degree_20bin": [
+      0.0020805329035212994,
+      0.08075117934399971
+    ]
+  },
+  "all_subjects_median": {
+    "spearman_Rspline_R20": 0.8652821517848732,
+    "rmse_over_iqr": 1.5940131145078946,
+    "maxdiff_over_iqr": 21.602740650095846,
+    "abs_rho_degree_spline": 0.0326939383482375,
+    "abs_rho_degree_20bin": 0.019636846214882868
+  },
+  "association_level_agreement (the quantity the null arbitrates)": {
+    "per_feature": {
+      "betweenness": {
+        "median_rho_spline": 0.10277934979384834,
+        "median_rho_20bin": 0.14246143527550487,
+        "median_abs_delta": 0.05044364630932631,
+        "p95_abs_delta": 0.1333389203689682
+      },
+      "bridge": {
+        "median_rho_spline": 0.46613525980610643,
+        "median_rho_20bin": 0.5205898999642411,
+        "median_abs_delta": 0.04364877379546439,
+        "p95_abs_delta": 0.12583253090244587
+      },
+      "clustering": {
+        "median_rho_spline": -0.1469372807018529,
+        "median_rho_20bin": -0.16856821142006262,
+        "median_abs_delta": 0.04793576849040478,
+        "p95_abs_delta": 0.13190029947379353
+      },
+      "eigenvector": {
+        "median_rho_spline": 0.10781110444801202,
+        "median_rho_20bin": 0.13307863767822642,
+        "median_abs_delta": 0.04799047939815207,
+        "p95_abs_delta": 0.13413121693573204
+      },
+      "kcore": {
+        "median_rho_spline": 0.03605597648787757,
+        "median_rho_20bin": 0.07501267884230764,
+        "median_abs_delta": 0.06472673879172638,
+        "p95_abs_delta": 0.13538730093757326
+      },
+      "pagerank": {
+        "median_rho_spline": -0.046019680509270466,
+        "median_rho_20bin": -0.007390743818363903,
+        "median_abs_delta": 0.0466234598887306,
+        "p95_abs_delta": 0.14498415946953866
+      },
+      "participation": {
+        "median_rho_spline": -0.1172929278155549,
+        "median_rho_20bin": -0.06966579942289976,
+        "median_abs_delta": 0.06389543615805837,
+        "p95_abs_delta": 0.10407501511434775
+      },
+      "redundancy": {
+        "median_rho_spline": -0.18259928714623286,
+        "median_rho_20bin": -0.2010767413625722,
+        "median_abs_delta": 0.04672814513158943,
+        "p95_abs_delta": 0.11583497195778034
+      },
+      "within_module_z": {
+        "median_rho_spline": -0.021106595098486294,
+        "median_rho_20bin": 0.01139862683126827,
+        "median_abs_delta": 0.0481718163471439,
+        "p95_abs_delta": 0.1416635852141463
+      }
+    },
+    "median_abs_delta_rho": 0.05024841889450993,
+    "p95_abs_delta_rho": 0.1436608164226295,
+    "sign_flips_beyond_0.05": 4,
+    "n_pairs": 108
+  },
+  "reading": "point-level residuals differ in the tails (binning vs smooth spline, expected); both are degree-orthogonal; the feature-association statistic rho(R, feature) - the quantity Stage 15 arbitrates - is stable across the two residualizations on observed data",
+  "note": "identical binning procedure to feature_nulls.py one_null(); the stored per-null R_null was additionally re-derived bit-exactly by verify_stage24.py V09"
+}

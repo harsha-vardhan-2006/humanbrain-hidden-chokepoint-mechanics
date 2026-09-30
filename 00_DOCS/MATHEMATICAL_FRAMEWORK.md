@@ -46,8 +46,19 @@ Per-node residual and standardized residual:
     ZR_i = R_i / SD_s(R)     (SD across the 456 nodes of subject s)
 
 Negative CIS values are retained exactly as stored (removal can raise
-efficiency for redundant nodes); the +1e-6 log offset exists only inside
-M1's fit and is recorded as a frozen implementation constant.
+efficiency for redundant nodes). No transform, offset, or retransformation
+exists anywhere in the final M1: it is a plain least-squares spline fit of
+raw CIS on degree.
+
+Historical note: earlier transform-based estimators (log10(CIS + 1e-6);
+asinh) were pre-unblinding implementation attempts, found invalid or
+biased at first execution, and retired BEFORE any Stage 3–5 statistic was
+consumed; they are superseded by Amendment-2 M1 above. Full history:
+CONFIG_FREEZE.md, Amendments 1–2. A separate robust 20-bin
+quantile-median residualization (the same Q_bin20 family listed above) is
+used only inside the Stage-15 null ensemble as a compute proxy for M1;
+its equivalence to M1 on the arbitrated association statistic is validated
+in 06_NULL_MODELS/NULL_PROXY_VALIDATION.json.
 
 ## 3. Orthogonality gate (Freeze 1 criterion)
 

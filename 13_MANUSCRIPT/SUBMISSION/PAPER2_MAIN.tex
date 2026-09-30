@@ -1,0 +1,312 @@
+% =========================================================================
+% PAPER 2 -- submission manuscript (LaTeX)
+% Degree-Independent Control Impact in the Human Structural Connectome:
+% Graph-Geometric Associations and Degree-Preserving Null Arbitration
+% =========================================================================
+% Scientific source of truth: frozen repository artifacts (v2.0.1).
+% Every number is quoted from audited frozen artifacts; the numeric layer
+% is independently verified by 13_MANUSCRIPT/verify_stage24.py (V01-V12,
+% 12/12 PASS, deep V09 over 1,200 raw null records).
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{orcidlink} % may be removed if unavailable
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newcommand{\del}{\delta}
+
+\title{\textbf{Degree-Independent Control Impact in the Human Structural
+Connectome: Graph-Geometric Associations and Degree-Preserving Null
+Arbitration}}
+
+\author{Harsha Vardhan Malipeddi\thanks{Independent Researcher.
+Corresponding author. ORCID/email: [author to supply before submission].}}
+\date{Frozen release v2.0.1 --- September 30, 2026}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Funding:} The author received no specific funding for this work.\\
+\textbf{Competing interests:} The author declares no competing interests.\\
+\textbf{Ethics:} This study used previously acquired, de-identified data
+(AOMIC ID1000); no new human data were collected.\\
+\textbf{Data \& code availability:} see Section~\ref{sec:avail}.\\
+\textbf{Author contributions:} H.V.M.\ conceived the study, developed the
+analysis framework, performed all computational analyses, validation and
+verification, and wrote the manuscript.
+
+\begin{abstract}
+\noindent\textbf{Question.} After accounting for connectivity
+(degree/strength), which graph-geometric properties explain node-level
+variation in removal-based control impact (CIS) in the human structural
+connectome --- and do any nodes qualify as operationally defined ``hidden
+chokepoints''?
+
+\smallskip\noindent\textbf{Methods.} 801 QC-pass subjects (AOMIC ID1000;
+4S456 parcellation; 15\% cost threshold) $\times$ 456 nodes. CIS consumed
+read-only from the frozen Paper~1 release. The degree-independent residual
+$R_i=\mathrm{CIS}_i-\widehat{\mathrm{CIS}}(\mathrm{degree}_i)$ is estimated
+per subject with a frozen cubic-spline family (orthogonality gate: median
+$|\rho(R,\mathrm{degree})|=0.0327$). Eleven network features are associated
+with $R$ within-subject, arbitrated by exact degree-preserving nulls
+(12 subjects $\times$ 100 nulls, seed 20270927, per-null full CIS + feature
+recomputation; estimator-equivalence validated), benchmarked out-of-sample
+(subject-grouped CV), and mapped onto evidence-leveled biological
+annotations.
+
+\smallskip\noindent\textbf{Results.} (1) The residual is positive in all
+subjects: $\del=0.104$, positive in 801/801 subjects (95\% CI
+$[0.1007,0.1073]$). (2) Network position predicts the residual
+out-of-sample: ridge cv-$R^2=0.574$ (permuted-$R$ control $0.0024$;
+degree-only $\approx 0$), strongest associate bridge score (median
+$\rho=+0.4985$). (3) \textbf{Degree-preserving-null arbitration is negative
+(Outcome C):} every feature's observed association falls inside the null
+p95 band --- independently deep-verified from the 1{,}200 raw null records.
+(4) Joint-criterion ``chokepoint'' candidates are rare and
+threshold-sensitive (1/2/3/7 nodes at $k=1/2/5/10\%$); per-node null
+arbitration is not established. (5) Top-10\%-CIS nodes under-represent
+cortex (0.444 vs 0.877; $q=0.00017$) --- permutation-supported but not
+spatially controlled. (6) The fly connectome's residual also fails its
+degree-preserving null ($z=1.21$, $p=0.109$, frozen): two same-direction
+negatives at different scales license no universal-mechanism claim.
+
+\smallskip\noindent\textbf{Conclusion.} Degree-independent control impact
+is a real, replicated, predictable-from-network-features, anatomically
+non-uniform property of human connectome architecture whose fine structure
+is \textbf{null-qualified}. The ``hidden chokepoint'' remains an
+operational, bounded construct rather than a validated node class.
+
+\smallskip\noindent
+\textbf{Keywords:} structural connectome; network control theory;
+controllability; degree confounding; null models; graph metrics;
+cross-species comparison.
+\end{abstract}
+
+\section{Introduction}
+Network control theory frames the brain as a dynamical system whose
+structural connectome constrains its reachable dynamics
+\cite{gu2015,tang2018,liu2011}. Removal-based control impact --- here
+\textbf{CIS} (Control Impact Score), the fractional loss of average network
+controllability upon node removal,
+$\mathrm{CIS}_i=(E(G)-E(G-i))/E(G)$ with $E$ the global efficiency
+\cite{latora2001} --- indexes each region's systemic importance, extending
+the error/attack-tolerance view of network robustness \cite{albert2000}.
+Structural connectome construction, streamline weighting and cost
+thresholding follow established recipes \cite{hagmann2008,smith2015,achard2007}.
+
+Paper~1 of this series \cite{paper1} established two facts that motivate
+the present work: (i) raw CIS in the human structural connectome is
+strongly degree-confounded (median $\rho=0.943$); and (ii) a small but
+strictly degree-matched residual exists and replicates ($\del=0.100$;
+re-derived here as $0.104$). Paper~1 also showed that anatomy does not
+transfer across scales (``architecture replicates, anatomy doesn't''):
+the fly visual system contributes $\approx 80\%$ of total CIS while the
+human visual system contributes $\approx 2\%$.
+
+Paper~2 asks the mechanistic follow-up, frozen before unblinding
+(\texttt{01\_CONFIG/CONFIG\_FREEZE.md}; protocol + Amendments 1--3):
+\begin{quote}
+\textbf{H1 (primary):} degree-controlled CIS residuals are associated with
+specific graph-geometric properties beyond degree/strength.
+\end{quote}
+Secondary hypotheses H2--H5 concern path redundancy, inter-community
+participation, core/bridge positions, and multivariate explainability;
+H6--H7 (cross-scale) are exploratory and are never promoted to
+confirmatory claims. All confirmatory tests are pre-registered against an
+Outcome A/B/C arbitration rule: \textbf{A} = association survives an exact
+degree-preserving null (mechanism licensed); \textbf{B} = mixed;
+\textbf{C} = no association exceeds the null band (mechanism not licensed).
+
+\section{Data and node semantics}
+\textbf{Human.} AOMIC ID1000 derived structural connectomes
+\cite{snoek2021} (Zenodo 19796783, CC-BY-4.0): 801 QC-pass subjects, 4S456
+parcellation, SIFT streamline counts \cite{smith2015}, 15\% cost threshold.
+CIS values are consumed \textbf{read-only} from the frozen Paper~1 release.
+\textbf{Fly (comparison only).} FAFB v783 frozen release artifacts
+\cite{dorkenwald2024,dorkenwald2023}: individual neurons; 3{,}518 targets.
+\textbf{Node semantics (mandatory).} A human network node is an atlas
+\textbf{parcel} --- a macroscopic brain region, never an individual neuron.
+
+\section{Methods}
+\subsection{CIS and the degree-independent residual}
+$\mathrm{CIS}_i=(E(G)-E(G-i))/E(G)$, exact recomputation. The residual is
+$R_i=\mathrm{CIS}_i-\mathbb{E}[\mathrm{CIS}\,|\,\mathrm{degree}_i]$ with
+the conditional expectation estimated \textbf{per subject} by OLS of raw
+CIS on a df\,=\,4 natural cubic spline of degree \cite{hastie2009}. Gates
+(all passed): orthogonality median $|\rho(R,\mathrm{degree})|=0.0327<0.05$;
+same-pairs agreement with Paper~1's matched-pair Cliff's $\del$
+\cite{cliff1993}, $\rho=0.785$. No transform, offset, or retransformation
+exists in the final estimator (history: Amendments 1--2).
+
+\subsection{Feature set and inference}
+Strength, betweenness \cite{freeman1977}, closeness, path redundancy,
+bridge score, participation and within-module $z$
+\cite{guimera2005}, k-core \cite{seidman1983}, eigenvector centrality
+\cite{bonacich1972}, PageRank \cite{page1999}, clustering
+\cite{watts1998} --- 11 features + degree. Within-subject Spearman
+associations (Stage 8); confirmatory within-subject standardized
+regression with CR1 cluster-robust SEs \cite{mackinnon1985} clustered on
+subject ($N=801$, 365{,}256 rows); 5-fold subject-grouped CV $\times$ 3
+seeds for the predictive benchmark (predictive performance is \textbf{not}
+a mechanism claim).
+
+\subsection{Degree-preserving null arbitration (confirmatory)}
+Maslov--Sneppen double-edge rewiring preserving the \textbf{exact degree
+sequence} \cite{maslov2002}, 12 subjects $\times$ 100 nulls, seed 20270927;
+per null: full CIS recomputation + full feature recomputation +
+residualization via the documented 20-bin quantile-median proxy of the
+frozen spline. The proxy is validated on observed data: the arbitrated
+association statistic differs between proxy and spline by a median of 0.050
+--- far below the null bands (0.10--0.73) --- and the binned variant yields
+\emph{stronger} observed associations, so it cannot manufacture Outcome~C.
+
+\paragraph{Null ensemble calibration and Monte Carlo precision.}
+The 12 subjects are a frozen-seed random draw from the 801; their pooled
+statistics are representative (bridge median $+0.466$ vs $+0.4985$
+population). 100 nulls/subject $\times$ 12 follows the Paper-1 precedent
+and the compute cost of exact CIS per null. With 1{,}200 records the p95
+rests on the upper $\sim$60 order statistics; its Monte-Carlo error is
+small relative to the band widths (per-feature null IQR of $|\rho|$
+$\approx 0.03$--$0.07$), and every observed statistic sits strictly inside
+its band, so the verdict is not boundary-sensitive at this ensemble size.
+
+\subsection{Robustness, negative controls, annotation, chokepoint
+definition, cross-species}
+Estimator ladder + winsorization (Stage 20); negative controls NC1/NC2
+(Stage 21); evidence-leveled annotation + permutation enrichment with BH
+correction \cite{benjamini1995} (Stage 23); operational five-criterion
+chokepoint definition (Stage 22); conservative 12-property human-vs-fly
+comparison (Stage 22b). Full details: Supplementary Tables S0--S10.
+
+\section{Results}
+\subsection{The residual replicates}
+$\del=0.104$ (median, 801 subjects), bootstrap 95\% CI $[0.1007,0.1073]$;
+positive in \textbf{801/801} subjects; LOSO max deviation $5.4\times10^{-8}$.
+
+\begin{table}[ht]
+\centering\small
+\caption{Predictive benchmark (5-fold subject-grouped CV $\times$ 3 seeds;
+numpy-native). Predictive performance is not a mechanism claim.}
+\begin{tabular}{lrrr}
+\toprule
+Model & cv-$R^2$ (mean $\pm$ sd) & cv-$R^2$ permuted & $\Delta$ vs degree-only \\
+\midrule
+Degree-only & $-0.00006\pm0.000002$ & $0.0004$ & --- \\
+\textbf{Ridge (11 feat.)} & $\mathbf{0.5740\pm0.0001}$ & $0.0024$ & $\mathbf{+0.574}$ \\
+Elastic net & $0.5614\pm0.0001$ & $0.0023$ & $+0.561$ \\
+MLP & $-4.09\pm4.57$ & $-4.65$ & $-4.09$ (unstable) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Associations and controls}
+All 12 features associate with $R$ at $q<10^{-27}$ (bridge $+0.4985$,
+closeness $+0.2489$, redundancy $-0.2179$, participation $-0.1676$); the
+8-feature CR1 model retains all at $q<10^{-7}$. NC1/NC2 chance bands are
+$|\rho|\le0.0044$; all 8 features exceed both bands (margins large for
+strong associates, small for the weak ones: within-module $z$ 0.014,
+k-core 0.052).
+
+\begin{table}[ht]
+\centering\small
+\caption{Degree-preserving null arbitration (12 subjects $\times$ 100
+nulls; exact degree preservation verified per null; deep-verified by gate
+V09 from the 1{,}200 raw records).}
+\begin{tabular}{lrrrr}
+\toprule
+Feature & Obs. $|\mathrm{med}\,\rho|$ & Null med $\rho$ & Null IQR & Null $|\rho|$ p95 \\
+\midrule
+Bridge & 0.4985 & $-0.5957$ & 0.0502 & 0.6538 \\
+Clustering & 0.1658 & $0.6846$ & 0.0443 & 0.7314 \\
+Redundancy & 0.2179 & $-0.6228$ & 0.0469 & 0.6807 \\
+Participation & 0.1676 & $0.3909$ & 0.0695 & 0.4609 \\
+Betweenness & 0.1333 & $0.1675$ & 0.0342 & 0.2102 \\
+Within-module $z$ & 0.0186 & $0.0942$ & 0.0448 & 0.1499 \\
+Eigenvector & 0.0834 & $0.0926$ & 0.0317 & 0.1304 \\
+k-core & 0.0556 & $0.0627$ & 0.0323 & 0.1003 \\
+PageRank & 0.0379 & $0.0618$ & 0.0304 & 0.0961 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Every observed association lies \textbf{inside} its null p95 band: the
+pre-registered \textbf{Outcome C}. H1 is therefore \textbf{not licensed} by
+this design.
+
+\subsection{Biology (not spatially controlled) and operational chokepoints}
+Top-10\%-CIS nodes under-represent cortex (0.444 vs 0.877; $q=0.00017$)
+and over-represent subcortex and thalamus; these enrichments are
+permutation-supported but \emph{not} spatially corrected (parcel centroids
+unavailable; none invented). Cell-type fields: not available. Chokepoint
+candidates (CIS top-$k$ $\wedge$ residual top-$k$ $\wedge$ bridge upper
+half): 1/2/3/7 at $k=1/2/5/10\%$; node-level null verdict not established.
+
+\subsection{Cross-scale comparison}
+ME.131 (case study only): CIS $z=+23.4$ (154$\times$ peers). The fly
+population-level residual fails its degree-preserving null ($z=1.21$,
+$p=0.109$; frozen v1.0.0, preserved verbatim). Two same-direction
+negatives license no universal-law claim.
+
+\section{Discussion}
+The human connectome's degree-independent control-impact residual is
+reproducible, positive in all 801 subjects, anatomically biased away from
+cortex, and substantially predictable from measured network features ---
+yet its feature associations are fully matched by exact degree-preserving
+nulls. The most defensible reading: what looks like a ``chokepoint
+signature'' is largely a consequence of degree architecture plus
+randomized-topology baselines, and any true fine structure is finer than
+this design can arbitrate at parcel resolution. This bounds Paper~1
+honestly: real, but not yet mechanistically explained.
+
+\section{Limitations}
+(1)~Spatial controls not established (no parcel centroids; the enrichment
+is not spatially corrected). (2)~Parcel resolution: no cell-type ground
+truth. (3)~Observational design: no causal claims. (4)~12-subject null
+ensemble is compute-bound (bands are Monte-Carlo estimates at frozen seed;
+see calibration paragraph). (5)~MLP arm unstable; reported, not
+interpreted. (6)~Fly case study ($n=1$) does not generalize.
+
+\section{Data and code availability}\label{sec:avail}
+Human: AOMIC ID1000 derived connectomes (Zenodo 19796783, CC-BY-4.0)
+\cite{snoek2021}; atlas: 4S456 frozen labels. Fly: FAFB v783
+\cite{dorkenwald2024}. Code and artifacts:
+\texttt{github.com/harsha-vardhan-2006/humanbrain-hidden-chokepoint-mechanics},
+tag \texttt{v2.0.1}; the 1{,}200-record raw null ensemble ships in the
+release archive (SHA256 in \texttt{dist/SHA256SUMS\_paper2.txt}).
+Every stage is scripted with frozen seeds; V01--V12 re-derive all headline
+numbers independently (12/12 PASS).
+
+\section{References}
+\begin{thebibliography}{99}\small
+\bibitem{achard2007} Achard, S., Bullmore, E. (2007). Efficiency and cost of economical brain functional networks. \emph{PLoS Comput. Biol.} 3, e17.
+\bibitem{albert2000} Albert, R., Jeong, H., Barab\'asi, A.-L. (2000). Error and attack tolerance of complex networks. \emph{Nature} 406, 378--382.
+\bibitem{benjamini1995} Benjamini, Y., Hochberg, Y. (1995). Controlling the false discovery rate. \emph{J.R. Stat. Soc. B} 57, 289--300.
+\bibitem{bonacich1972} Bonacich, P. (1972). Factoring and weighting approaches to status scores and clique identification. \emph{J. Math. Sociol.} 2, 113--120.
+\bibitem{cliff1993} Cliff, N. (1993). Dominance statistics: ordinal analyses to answer ordinal questions. \emph{Psychol. Bull.} 114, 494--509.
+\bibitem{dorkenwald2023} Dorkenwald, S. et al. (2023). Neuronal wiring diagram of an adult brain. \emph{bioRxiv} 2023.06.27.546656.
+\bibitem{dorkenwald2024} Dorkenwald, S. et al. (2024). Neuronal wiring diagram of an adult brain. \emph{Nature} 634, 124--138.
+\bibitem{freeman1977} Freeman, L.C. (1977). A set of measures of centrality based on betweenness. \emph{Sociometry} 40, 35--41.
+\bibitem{gu2015} Gu, S. et al. (2015). Controllability of structural brain networks. \emph{Nat. Commun.} 6, 8414.
+\bibitem{guimera2005} Guimer\`a, R., Amaral, L.A.N. (2005). Cartography of complex networks: modules and universal roles. \emph{J. Stat. Mech.} P02001.
+\bibitem{hagmann2008} Hagmann, P. et al. (2008). Mapping the structural core of human cerebral cortex. \emph{PLoS Biol.} 6, e159.
+\bibitem{hastie2009} Hastie, T., Tibshirani, R., Friedman, J. (2009). \emph{The Elements of Statistical Learning}, 2nd ed. Springer.
+\bibitem{latora2001} Latora, V., Marchiori, M. (2001). Efficient behavior of small-world networks. \emph{Phys. Rev. Lett.} 87, 198701.
+\bibitem{liu2011} Liu, Y.-Y., Slotine, J.-J., Barab\'asi, A.-L. (2011). Controllability of complex networks. \emph{Nature} 473, 167--173.
+\bibitem{mackinnon1985} MacKinnon, J.G., White, H. (1985). Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. \emph{J. Econometrics} 29, 305--325.
+\bibitem{maslov2002} Maslov, S., Sneppen, K. (2002). Specificity and stability in topology of protein networks. \emph{Science} 296, 910--913.
+\bibitem{page1999} Page, L., Brin, S., Motwani, R., Winograd, T. (1999). The PageRank citation ranking. Stanford InfoLab technical report.
+\bibitem{paper1} Malipeddi, H.V. (2026). Control-impact architecture of the human structural connectome. Paper 1 of the series, frozen release v1.1.0 (preprint / research repository).
+\bibitem{seidman1983} Seidman, S.B. (1983). Network structure and minimum degree. \emph{Soc. Networks} 5, 269--287.
+\bibitem{smith2015} Smith, R.E. et al. (2015). SIFT2: Super-resolution tractography. \emph{NeuroImage} 113, 323--337.
+\bibitem{snoek2021} Snoek, L. et al. (2021). The Amsterdam Open MRI Collection. \emph{Sci. Data} 8, 85.
+\bibitem{tang2018} Tang, E., Bassett, D.S. (2018). Colloquium: Control of networks in the brain. \emph{Rev. Mod. Phys.} 90, 031003.
+\bibitem{watts1998} Watts, D.J., Strogatz, S.H. (1998). Collective dynamics of `small-world' networks. \emph{Nature} 393, 440--442.
+\end{thebibliography}
+
+\end{document}
