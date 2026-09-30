@@ -153,3 +153,25 @@ Fixes:      FINAL_STATUS.md Git-package row PENDING -> PASS (release
             in paper section 8.
 Verdict:    paper complete; study v2.0.0 released.
 ```
+
+---
+
+## P2-03 — 2026-09-30 — STUDY FREEZE + standalone release repo
+
+```
+Entry:      P2-03
+Date:       2026-09-30
+Scope:      Freeze of the completed Paper 2 study; standalone mirror repo
+
+FREEZE:     Study tree declared FROZEN (read-only) at v2.0.0 lineage
+            (9e9cfd1 + manuscript commit 80fe5ba). Declaration appended
+            to 01_CONFIG/CONFIG_FREEZE.md (append-only, below Amendment 3).
+            No result, figure, table, or manuscript number modified.
+Release:    Standalone mirror repo
+            github.com/harsha-vardhan-2006/humanbrain-hidden-chokepoint-mechanics
+            created per master prompt; parent study tree flattened to repo
+            root; parent history imported for lineage; tag v2.0.0 re-created
+            on the standalone release head; PROVENANCE.md records parent
+            SHAs + ZIP SHA256 (45c758b8...bfd1e0e).
+Verdict:    Paper 2 analysis CLOSED; further work = new labeled studies only.
+```

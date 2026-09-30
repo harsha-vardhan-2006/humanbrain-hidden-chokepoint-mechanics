@@ -173,3 +173,36 @@ regenerated (resume-safe: only the `redundancy` column changes). No frozen
 gate, threshold, seed, or hypothesis is altered; this repairs the feature's
 implementation to its frozen definition (MATHEMATICAL_FRAMEWORK §3 path /
 §8 redundancy family).
+
+## STUDY FREEZE (2026-09-30) — Paper 2 analysis complete, read-only from here
+
+This study is declared **FROZEN** as of 2026-09-30, at parent-repo tag
+`v2.0.0` (commit `9e9cfd1`) plus the manuscript commit `80fe5ba`.
+
+Status at freeze:
+
+- All stages 0–24 executed; verification gates V01–V12 12/12 PASS;
+  full-project QC 25 PASS / 0 FAIL / 1 WARNING (resolved).
+- Central scientific verdict: residual real (δ = 0.104, 801/801) and
+  learnable (ridge cv-R² = 0.574); mechanism NULL-QUALIFIED (Outcome C,
+  all 9 features inside degree-preserving null p95 bands); chokepoint =
+  operational label only (1/2/3/7 candidates at k = 1/2/5/10%);
+  spatial controls NOT_ESTABLISHED; fly negative (z = 1.21, p = 0.109)
+  preserved verbatim.
+- Formal manuscript: `13_MANUSCRIPT/RESEARCH_PAPER.md` (commit `80fe5ba`),
+  compiled exclusively from frozen artifacts.
+
+Rules from the freeze forward:
+
+1. Everything under this study tree is **read-only**. Any new analysis is a
+   clearly labeled NEW study (new tree, e.g. `03_...`), never a modification.
+2. No result, table, figure, or manuscript number may be edited or deleted;
+   supersession happens only via a new dated, marked section appended here.
+3. The frozen outputs of Paper 1 (v1.1.0) and the fly release (v1.0.0)
+   remain read-only as before.
+4. Release lineage: `dist/humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip`
+   (SHA256 in `dist/SHA256SUMS_paper2.txt`) + standalone mirror
+   `harsha-vardhan-2006/humanbrain-hidden-chokepoint-mechanics` (tag
+   `v2.0.0`, imported parent history; see `PROVENANCE.md` there).
+5. Reviewer-requested additions become post-hoc/secondary analyses, clearly
+   labeled, never folded into frozen numbers.
