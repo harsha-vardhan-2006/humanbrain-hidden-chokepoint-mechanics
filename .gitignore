@@ -10,6 +10,8 @@
 !/CITATION.cff
 !/requirements.txt
 !/run_all.py
+!/dist/
+dist/*
 !/dist/SHA256SUMS_paper2.txt
 !/00_DOCS/
 !/01_CONFIG/

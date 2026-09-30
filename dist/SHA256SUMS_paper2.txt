@@ -1,1 +1,5 @@
-45c758b8067b46f0758a18f1e5a70b197c3e8d6ede0b26c0739ceb50ebfd1e0e *humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip
+45c758b8067b46f0758a18f1e5a70b197c3e8d6ede0b26c0739ceb50ebfd1e0e *humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip (frozen original release archive, 2026-09-30)
+15a2149dcab6bff0dade35dd2d8970a0c21fc5b767129be5f8450fdc91b4d5a2 *humanbrain_hidden_chokepoint_mechanics_v2.0.1.zip (current release archive)
+e01852cdf4a2f00f63531dc108b35c3a5b005714713cc443a1760d07ecde7864 *null_records_checkpoint.jsonl (raw 1,200-null ensemble; GitHub Release asset)
+eeff0765756ed524de602c628e6b839ae8e9817dc7b83dfe4f0b65e15ce5aa10 *PAPER2_MAIN.pdf (v2.0.1)
+789463efe1319cbbeffe3d6ae8993a357d30c69223534eee77617a82ed52d7f4 *SUPPLEMENTARY.pdf (v2.0.1)
