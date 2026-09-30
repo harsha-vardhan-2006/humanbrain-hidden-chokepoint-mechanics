@@ -75,7 +75,7 @@ Verdict:    FREEZE 1 ACHIEVED - residualization validated and locked.
 
 ---
 
-## P2-01 — Stages 6–24 completion (2026-09-30)
+## P2-01 ï¿½ Stages 6ï¿½24 completion (2026-09-30)
 
 ```
 Date:       2026-09-30
@@ -121,4 +121,35 @@ Data protection: Paper 1 + fly artifacts read-only; frozen outputs
 Next step:  figures + manuscript package + QC + release (P2-02).
 Verdict:    residual real and learnable; mechanism claim NULL-QUALIFIED
             (Outcome C); chokepoint = operational label only.
+```
+
+---
+
+## P2-02 â€” 2026-09-30 â€” Formal research paper + v2.0.0 release
+
+```
+Entry:      P2-02
+Date:       2026-09-30
+Scope:      Paper 2 master prompt Stage 25 (final report) + formal paper
+
+Release:    tag v2.0.0 on parent repo (commit 9e9cfd1); ZIP
+            dist/humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip
+            (SHA256 45c758b8...bfd1e0e, manifest dist/SHA256SUMS_paper2.txt).
+            Frozen Paper 1 + fly lineage (v1.1.0) untouched.
+QC:         run_full_qc.py 25 PASS / 0 FAIL / 1 WARNING (git-cleanliness
+            check, resolved at release); V01-V12 12/12 PASS.
+Paper:      13_MANUSCRIPT/RESEARCH_PAPER.md â€” formal manuscript compiled
+            FROM FROZEN ARTIFACTS ONLY; no numbers re-derived, no claims
+            extended. Tables: ML benchmark, null arbitration (Outcome C,
+            9 features), enrichment (major structure), chokepoint
+            sensitivity, human-vs-fly comparison. Fly negative
+            (z=1.21, p=0.109) preserved verbatim.
+Framing:    residual real + learnable (ridge cv-R2 = 0.574); mechanism
+            NULL-QUALIFIED (Outcome C); chokepoint = operational label
+            only; spatial NOT_ESTABLISHED; no causal claims.
+Fixes:      FINAL_STATUS.md Git-package row PENDING -> PASS (release
+            completed this session); release vehicle deviation
+            (parent-repo tag instead of standalone repo) documented
+            in paper section 8.
+Verdict:    paper complete; study v2.0.0 released.
 ```

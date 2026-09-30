@@ -18,13 +18,12 @@
 | Manuscript            | PASS      | MANUSCRIPT.md + SUPPLEMENTARY + FIGURE_LEGENDS + REPRODUCIBILITY |
 | Verification gates    | PASS      | V01-V12: 12/12 (13_MANUSCRIPT/verify_stage24.py, exit 0) |
 | Full QC               | PASS      | QC/run_full_qc.py: 25 PASS / 0 FAIL / 1 WARNING |
-| Secret scan           | PASS      | QC scan clean; no .env; no token patterns in tree |
-| Git package           | PENDING   | Executed at repo root after this file (see dist/ + tag v1.0.0) |
+| Secret scan           | PASS      | QC scan clean; no .env; no token patterns in tree || Git package             | PASS      | Tag v2.0.0 (commit 9e9cfd1) pushed to origin; dist/humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip + SHA256SUMS_paper2.txt committed |
 
-TOTAL PASS: 16   TOTAL FAIL: 0   TOTAL WARNING: 0   NOT_ESTABLISHED: 1 (spatial)   PENDING: 1 (git release step)
+TOTAL PASS: 17   TOTAL FAIL: 0   TOTAL WARNING: 0   NOT_ESTABLISHED: 1 (spatial)   PENDING: 0
 
 Percentages are NOT manufactured; counts are literal.
 
-Verdict: **release-ready** once the repo-root commit/tag/push/dist steps
-complete. Scientific headline is bounded: residual real + learnable;
-mechanism null-qualified (Outcome C); chokepoint = operational label only.
+Verdict: **RELEASED** (v2.0.0, 2026-09-30). Scientific headline is bounded:
+residual real + learnable; mechanism null-qualified (Outcome C);
+chokepoint = operational label only.
