@@ -4,8 +4,8 @@ TOTAL PASS: 25   TOTAL FAIL: 0   TOTAL WARNING: 1
 
 | Status | Check | Detail |
 |---|---|---|
-| PASS | AOMIC cache parts present | 20 files in cache_parts |
-| PASS | Fly frozen artifacts reachable | True |
+| PASS | AOMIC cache parts present | 20 files in D:\humanbrain\humanbrain\13_CROSS_SPECIES_CIS\02_PREPROCESSING\cache_parts |
+| PASS | Fly frozen artifacts reachable | D:\humanbrain\hbm_standalone\..\fruitfly\results\tables\e14_chokepoint_catalogue_v2.csv |
 | PASS | Annotation table 456 unique nodes | rows=456 |
 | PASS | Critical annotation fields complete |  |
 | PASS | Cell-type fields uniformly NOT_AVAILABLE | discipline: no invented biology |

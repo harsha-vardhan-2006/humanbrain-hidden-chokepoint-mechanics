@@ -33,14 +33,43 @@ def add(status: str, check: str, detail: str = "") -> None:
 
 
 def main() -> None:
-    # 1. dataset presence
-    cache = STUDY / "02_PREPROCESSING" / "cache_parts"
-    n_cache = len(list(cache.glob("*"))) if cache.exists() else 0
-    add("PASS" if n_cache >= 20 else "FAIL", "AOMIC cache parts present",
-        f"{n_cache} files in cache_parts")
-    fly_tab = REPO.parent / "fruitfly" / "results" / "tables" / "e14_chokepoint_catalogue_v2.csv"
-    add("PASS" if fly_tab.exists() else "FAIL", "Fly frozen artifacts reachable",
-        str(fly_tab.exists()))
+    # 1. dataset presence (layout-aware for the flattened standalone repo:
+    # raw AOMIC cache parts live in the parent tree and are NOT redistributed;
+    # fall back to verifying the frozen derived matrices this study consumed)
+    cache_candidates = [
+        TREE / ".." / "13_CROSS_SPECIES_CIS" / "02_PREPROCESSING" / "cache_parts",
+        Path("D:/humanbrain/humanbrain/13_CROSS_SPECIES_CIS/02_PREPROCESSING/cache_parts"),
+    ]
+    n_cache = 0
+    cache_seen = None
+    for c in cache_candidates:
+        if c.exists():
+            n_cache = len(list(c.glob("*")))
+            cache_seen = c
+            if n_cache >= 20:
+                break
+    if n_cache >= 20:
+        add("PASS", "AOMIC cache parts present", f"{n_cache} files in {cache_seen}")
+    else:
+        # fallback: frozen derived matrices with exact expected shapes
+        try:
+            fm = pd.read_parquet(TREE / "03_FEATURE_EXTRACTION" / "NODE_FEATURE_MATRIX.parquet")
+            rd = pd.read_parquet(TREE / "04_DEGREE_CONTROL" / "continuous_residuals.parquet")
+            ok = (fm["subject"].nunique() == 801 and len(fm) == 801 * 456
+                  and len(rd) == 801 * 456)
+            add("PASS" if ok else "FAIL",
+                "Dataset lineage via frozen derived matrices (raw cache not "
+                "redistributed; parent-tree cache absent)",
+                f"feature matrix {fm.shape}, residuals {rd.shape}")
+        except Exception as e:  # noqa: BLE001 - fail loud with reason
+            add("FAIL", "Dataset lineage", f"no raw cache and derived check failed: {e}")
+    fly_candidates = [
+        TREE / ".." / "fruitfly" / "results" / "tables" / "e14_chokepoint_catalogue_v2.csv",
+        Path("D:/humanbrain/fruitfly/results/tables/e14_chokepoint_catalogue_v2.csv"),
+    ]
+    fly_tab = next((p for p in fly_candidates if p.exists()), None)
+    add("PASS" if fly_tab is not None else "FAIL", "Fly frozen artifacts reachable",
+        str(fly_tab))
 
     # 2. atlas mapping / annotation completeness
     ann = pd.read_csv(TREE / "results_annotation" / "human_node_biological_annotations.csv")
