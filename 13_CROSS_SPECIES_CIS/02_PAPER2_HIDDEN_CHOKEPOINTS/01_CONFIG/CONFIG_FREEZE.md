@@ -147,3 +147,29 @@ Gate consequences (unchanged thresholds): orthogonality |median ρ| < 0.05
 now applies to the raw-CIS primary estimator; the Stage 4 sign-agreement
 quantity is retired (meaningless against pair-only deltas) and replaced by
 the same-pairs Spearman.
+
+## AMENDMENT 3 (2026-09-28, pre-analysis) — redundancy feature repair
+
+**Defect.** The Stage 6 `redundancy` feature (local alternative-path
+redundancy, H2's primary variable) was computed with a **boolean
+common-neighbor matrix**: numpy bool-matrix `dot` performs OR-semantics, so
+common-neighbor counts collapsed to {0, −1}, `C > 0` was never true, and the
+feature degenerated to the direct-neighbor-edge mask — numerically identical
+to `clustering` on all rows (verified: Pearson r = 1.000 over 365,256 rows;
+max abs diff 0.0).
+
+**Timing.** Discovered in the pre-analysis integrity sweep of the completed
+Stage 6 matrix, BEFORE any downstream stage consumed the feature (Stages 7+
+had not run; no statistic, table, or figure involved `redundancy`).
+
+**Fix.** `03_FEATURE_EXTRACTION/extract_features.py::_redundancy`: cast the
+adjacency to int32 before the common-neighbor product (`C = Ai[nb,:] ·
+Ai[:,nb] − 1`). No other line changes. A unit assertion
+(`redundancy != clustering` on any subject with at least one transitive
+neighbor pair) is added to the Stage 6 QC.
+
+**Action.** Per-subject caches and `NODE_FEATURE_MATRIX.parquet` are
+regenerated (resume-safe: only the `redundancy` column changes). No frozen
+gate, threshold, seed, or hypothesis is altered; this repairs the feature's
+implementation to its frozen definition (MATHEMATICAL_FRAMEWORK §3 path /
+§8 redundancy family).

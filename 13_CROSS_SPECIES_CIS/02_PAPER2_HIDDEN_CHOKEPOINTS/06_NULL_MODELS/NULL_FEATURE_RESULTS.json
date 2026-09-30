@@ -1,0 +1,94 @@
+{
+  "n_subjects": 12,
+  "subjects": [
+    "13",
+    "186",
+    "252",
+    "350",
+    "373",
+    "399",
+    "490",
+    "509",
+    "694",
+    "794",
+    "815",
+    "898"
+  ],
+  "n_nulls_per_subject": 100,
+  "seed": 20270927,
+  "summary": [
+    {
+      "feature": "betweenness",
+      "median_rho_null": 0.16750181411634174,
+      "iqr_rho_null": 0.03419086060282675,
+      "abs_rho_p95_null": 0.21019174058525922,
+      "median_rho_observed": 0.1332919320609954,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "bridge",
+      "median_rho_null": -0.5957098808025466,
+      "iqr_rho_null": 0.05024554141876425,
+      "abs_rho_p95_null": 0.6538151906597721,
+      "median_rho_observed": 0.49847591211536907,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "redundancy",
+      "median_rho_null": -0.6228144691505926,
+      "iqr_rho_null": 0.046923710939452024,
+      "abs_rho_p95_null": 0.6807135635021481,
+      "median_rho_observed": -0.2179184702753998,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "participation",
+      "median_rho_null": 0.39085198634556545,
+      "iqr_rho_null": 0.06951186761215206,
+      "abs_rho_p95_null": 0.46094715523573854,
+      "median_rho_observed": -0.16764309728409507,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "within_module_z",
+      "median_rho_null": 0.09421365254283637,
+      "iqr_rho_null": 0.04479441297990128,
+      "abs_rho_p95_null": 0.14990319436626184,
+      "median_rho_observed": -0.018594593726170304,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "kcore",
+      "median_rho_null": 0.06269547975429868,
+      "iqr_rho_null": 0.03232767082637721,
+      "abs_rho_p95_null": 0.10032486929154927,
+      "median_rho_observed": 0.05563977774771777,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "clustering",
+      "median_rho_null": 0.6846133501628802,
+      "iqr_rho_null": 0.044317321635039764,
+      "abs_rho_p95_null": 0.7314192870323856,
+      "median_rho_observed": -0.16584661420507738,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "eigenvector",
+      "median_rho_null": 0.09263395745080741,
+      "iqr_rho_null": 0.031695032078999166,
+      "abs_rho_p95_null": 0.13039131642805768,
+      "median_rho_observed": 0.08343442664289724,
+      "obs_exceeds_null_p95": false
+    },
+    {
+      "feature": "pagerank",
+      "median_rho_null": 0.06181877572575495,
+      "iqr_rho_null": 0.03036488080781693,
+      "abs_rho_p95_null": 0.09613417881028405,
+      "median_rho_observed": -0.037879569756662325,
+      "obs_exceeds_null_p95": false
+    }
+  ],
+  "note": "null residualization uses the 20-bin quantile-median robust proxy of the frozen spline estimator (documented equivalence target: orthogonalize R vs degree); exact CIS per null via node_cis_fast; degree preservation verified per null"
+}

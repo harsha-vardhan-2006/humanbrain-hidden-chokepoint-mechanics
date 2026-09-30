@@ -1,0 +1,671 @@
+{
+  "n_perm": 10000,
+  "seed": 20270927,
+  "top_frac": 0.1,
+  "note": "node-level; labels from evidence-leveled annotation table; cell-type fields are NOT_AVAILABLE (parcels are not cell types) hence NOT_ESTABLISHED",
+  "enrichment": [
+    {
+      "set": "top10_CIS",
+      "category_col": "major_structure",
+      "category": "Brainstem",
+      "n_top": 0,
+      "n_total": 12,
+      "observed_share": 0.0,
+      "expected_share": 0.02631578947368421,
+      "enrichment_pp": -0.02631578947368421,
+      "perm_p_two_sided": 0.38946105389461055,
+      "ci95_null_stat": [
+        -0.02631578947368421,
+        0.04035087719298246
+      ],
+      "q_bh": 0.38946105389461055
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "major_structure",
+      "category": "CORTEX",
+      "n_top": 20,
+      "n_total": 400,
+      "observed_share": 0.4444444444444444,
+      "expected_share": 0.8771929824561403,
+      "enrichment_pp": -0.4327485380116959,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.09941520467836251,
+        0.0783625730994153
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "major_structure",
+      "category": "Cerebellum",
+      "n_top": 3,
+      "n_total": 10,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.04473684210526316,
+      "perm_p_two_sided": 0.06999300069993,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.0874912508749125
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "major_structure",
+      "category": "Subcortex",
+      "n_top": 10,
+      "n_total": 20,
+      "observed_share": 0.2222222222222222,
+      "expected_share": 0.043859649122807015,
+      "enrichment_pp": 0.1783625730994152,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.043859649122807015,
+        0.06725146198830409
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "major_structure",
+      "category": "Thalamus",
+      "n_top": 12,
+      "n_total": 14,
+      "observed_share": 0.26666666666666666,
+      "expected_share": 0.03070175438596491,
+      "enrichment_pp": 0.23596491228070177,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.03070175438596491,
+        0.05818713450292398
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "hemisphere",
+      "category": "BILATERAL_MIDLINE",
+      "n_top": 3,
+      "n_total": 10,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.04473684210526316,
+      "perm_p_two_sided": 0.06939306069393061,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.20817918208179184
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "hemisphere",
+      "category": "L",
+      "n_top": 21,
+      "n_total": 223,
+      "observed_share": 0.4666666666666667,
+      "expected_share": 0.48903508771929827,
+      "enrichment_pp": -0.022368421052631593,
+      "perm_p_two_sided": 0.7551244875512448,
+      "ci95_null_stat": [
+        -0.1334795321637427,
+        0.13318713450292397
+      ],
+      "q_bh": 0.7579242075792422
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "hemisphere",
+      "category": "R",
+      "n_top": 21,
+      "n_total": 223,
+      "observed_share": 0.4666666666666667,
+      "expected_share": 0.48903508771929827,
+      "enrichment_pp": -0.022368421052631593,
+      "perm_p_two_sided": 0.7579242075792421,
+      "ci95_null_stat": [
+        -0.1334795321637427,
+        0.13318713450292397
+      ],
+      "q_bh": 0.7579242075792422
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "cerebellar",
+      "n_top": 3,
+      "n_total": 10,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.04473684210526316,
+      "perm_p_two_sided": 0.0664933506649335,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.14308569143085692
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "default mode",
+      "n_top": 4,
+      "n_total": 91,
+      "observed_share": 0.08888888888888889,
+      "expected_share": 0.19956140350877194,
+      "enrichment_pp": -0.11067251461988305,
+      "perm_p_two_sided": 0.07949205079492051,
+      "ci95_null_stat": [
+        -0.11067251461988305,
+        0.11154970760233918
+      ],
+      "q_bh": 0.14308569143085692
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "dorsal attention",
+      "n_top": 3,
+      "n_total": 46,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": -0.03421052631578947,
+      "perm_p_two_sided": 0.46325367463253675,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.09912280701754388
+      ],
+      "q_bh": 0.4632536746325367
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "frontoparietal control",
+      "n_top": 3,
+      "n_total": 52,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.11403508771929824,
+      "enrichment_pp": -0.047368421052631574,
+      "perm_p_two_sided": 0.3401659834016598,
+      "ci95_null_stat": [
+        -0.06959064327485379,
+        0.08596491228070177
+      ],
+      "q_bh": 0.398997600239976
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "limbic",
+      "n_top": 1,
+      "n_total": 26,
+      "observed_share": 0.022222222222222223,
+      "expected_share": 0.05701754385964912,
+      "enrichment_pp": -0.03479532163742689,
+      "perm_p_two_sided": 0.35466453354664534,
+      "ci95_null_stat": [
+        -0.05701754385964912,
+        0.07631578947368421
+      ],
+      "q_bh": 0.398997600239976
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "somatomotor",
+      "n_top": 1,
+      "n_total": 77,
+      "observed_share": 0.022222222222222223,
+      "expected_share": 0.16885964912280702,
+      "enrichment_pp": -0.1466374269005848,
+      "perm_p_two_sided": 0.004999500049995001,
+      "ci95_null_stat": [
+        -0.10219298245614035,
+        0.09780701754385965
+      ],
+      "q_bh": 0.022497750224977502
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "subcortical",
+      "n_top": 22,
+      "n_total": 46,
+      "observed_share": 0.4888888888888889,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": 0.38801169590643275,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.07690058479532165
+      ],
+      "q_bh": 0.0008999100089991002
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "ventral attention/salience",
+      "n_top": 7,
+      "n_total": 47,
+      "observed_share": 0.15555555555555556,
+      "expected_share": 0.10307017543859649,
+      "enrichment_pp": 0.052485380116959066,
+      "perm_p_two_sided": 0.29557044295570445,
+      "ci95_null_stat": [
+        -0.08084795321637427,
+        0.09692982456140352
+      ],
+      "q_bh": 0.398997600239976
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "functional_network",
+      "category": "visual",
+      "n_top": 1,
+      "n_total": 61,
+      "observed_share": 0.022222222222222223,
+      "expected_share": 0.1337719298245614,
+      "enrichment_pp": -0.11154970760233918,
+      "perm_p_two_sided": 0.0193980601939806,
+      "ci95_null_stat": [
+        -0.08932748538011695,
+        0.11067251461988303
+      ],
+      "q_bh": 0.058194180581941805
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "cortical_status",
+      "category": "CEREBELLUM",
+      "n_top": 3,
+      "n_total": 10,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.04473684210526316,
+      "perm_p_two_sided": 0.06629337066293371,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.06629337066293371
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "cortical_status",
+      "category": "CORTICAL",
+      "n_top": 20,
+      "n_total": 400,
+      "observed_share": 0.4444444444444444,
+      "expected_share": 0.8771929824561403,
+      "enrichment_pp": -0.4327485380116959,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.09941520467836251,
+        0.0783625730994153
+      ],
+      "q_bh": 0.00014998500149985002
+    },
+    {
+      "set": "top10_CIS",
+      "category_col": "cortical_status",
+      "category": "SUBCORTICAL",
+      "n_top": 22,
+      "n_total": 46,
+      "observed_share": 0.4888888888888889,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": 0.38801169590643275,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.09912280701754388
+      ],
+      "q_bh": 0.00014998500149985002
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "major_structure",
+      "category": "Brainstem",
+      "n_top": 9,
+      "n_total": 12,
+      "observed_share": 0.2,
+      "expected_share": 0.02631578947368421,
+      "enrichment_pp": 0.1736842105263158,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.02631578947368421,
+        0.04035087719298246
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "major_structure",
+      "category": "CORTEX",
+      "n_top": 21,
+      "n_total": 400,
+      "observed_share": 0.4666666666666667,
+      "expected_share": 0.8771929824561403,
+      "enrichment_pp": -0.41052631578947363,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.09941520467836251,
+        0.0783625730994153
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "major_structure",
+      "category": "Cerebellum",
+      "n_top": 8,
+      "n_total": 10,
+      "observed_share": 0.17777777777777778,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.1558479532163743,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.0001666500016665
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "major_structure",
+      "category": "Subcortex",
+      "n_top": 7,
+      "n_total": 20,
+      "observed_share": 0.15555555555555556,
+      "expected_share": 0.043859649122807015,
+      "enrichment_pp": 0.11169590643274854,
+      "perm_p_two_sided": 0.0021997800219978004,
+      "ci95_null_stat": [
+        -0.043859649122807015,
+        0.06725146198830409
+      ],
+      "q_bh": 0.0027497250274972507
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "major_structure",
+      "category": "Thalamus",
+      "n_top": 0,
+      "n_total": 14,
+      "observed_share": 0.0,
+      "expected_share": 0.03070175438596491,
+      "enrichment_pp": -0.03070175438596491,
+      "perm_p_two_sided": 0.3762623737626237,
+      "ci95_null_stat": [
+        -0.03070175438596491,
+        0.05818713450292398
+      ],
+      "q_bh": 0.3762623737626237
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "hemisphere",
+      "category": "BILATERAL_MIDLINE",
+      "n_top": 8,
+      "n_total": 10,
+      "observed_share": 0.17777777777777778,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.1558479532163743,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.00029997000299970003
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "hemisphere",
+      "category": "L",
+      "n_top": 19,
+      "n_total": 223,
+      "observed_share": 0.4222222222222222,
+      "expected_share": 0.48903508771929827,
+      "enrichment_pp": -0.06681286549707605,
+      "perm_p_two_sided": 0.35066493350664935,
+      "ci95_null_stat": [
+        -0.1334795321637427,
+        0.13318713450292397
+      ],
+      "q_bh": 0.35066493350664935
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "hemisphere",
+      "category": "R",
+      "n_top": 18,
+      "n_total": 223,
+      "observed_share": 0.4,
+      "expected_share": 0.48903508771929827,
+      "enrichment_pp": -0.08903508771929824,
+      "perm_p_two_sided": 0.21177882211778823,
+      "ci95_null_stat": [
+        -0.1334795321637427,
+        0.13318713450292397
+      ],
+      "q_bh": 0.31766823317668236
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "cerebellar",
+      "n_top": 8,
+      "n_total": 10,
+      "observed_share": 0.17777777777777778,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.1558479532163743,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 0.0004499550044995501
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "default mode",
+      "n_top": 5,
+      "n_total": 91,
+      "observed_share": 0.1111111111111111,
+      "expected_share": 0.19956140350877194,
+      "enrichment_pp": -0.08845029239766083,
+      "perm_p_two_sided": 0.1680831916808319,
+      "ci95_null_stat": [
+        -0.11067251461988305,
+        0.11154970760233918
+      ],
+      "q_bh": 0.21610696073249816
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "dorsal attention",
+      "n_top": 2,
+      "n_total": 46,
+      "observed_share": 0.044444444444444446,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": -0.05643274853801169,
+      "perm_p_two_sided": 0.20757924207579243,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.09912280701754388
+      ],
+      "q_bh": 0.23352664733526649
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "frontoparietal control",
+      "n_top": 0,
+      "n_total": 52,
+      "observed_share": 0.0,
+      "expected_share": 0.11403508771929824,
+      "enrichment_pp": -0.11403508771929824,
+      "perm_p_two_sided": 0.0100989901009899,
+      "ci95_null_stat": [
+        -0.06959064327485379,
+        0.08596491228070177
+      ],
+      "q_bh": 0.01817818218178182
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "limbic",
+      "n_top": 8,
+      "n_total": 26,
+      "observed_share": 0.17777777777777778,
+      "expected_share": 0.05701754385964912,
+      "enrichment_pp": 0.12076023391812866,
+      "perm_p_two_sided": 0.0017998200179982,
+      "ci95_null_stat": [
+        -0.05701754385964912,
+        0.07631578947368421
+      ],
+      "q_bh": 0.0053994600539946
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "somatomotor",
+      "n_top": 3,
+      "n_total": 77,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.16885964912280702,
+      "enrichment_pp": -0.10219298245614035,
+      "perm_p_two_sided": 0.060693930606939304,
+      "ci95_null_stat": [
+        -0.10219298245614035,
+        0.12002923976608185
+      ],
+      "q_bh": 0.09104089591040897
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "subcortical",
+      "n_top": 16,
+      "n_total": 46,
+      "observed_share": 0.35555555555555557,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": 0.25467836257309945,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.09912280701754388
+      ],
+      "q_bh": 0.0004499550044995501
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "ventral attention/salience",
+      "n_top": 3,
+      "n_total": 47,
+      "observed_share": 0.06666666666666667,
+      "expected_share": 0.10307017543859649,
+      "enrichment_pp": -0.03640350877192983,
+      "perm_p_two_sided": 0.45645435456454353,
+      "ci95_null_stat": [
+        -0.08084795321637427,
+        0.09692982456140352
+      ],
+      "q_bh": 0.4564543545645436
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "functional_network",
+      "category": "visual",
+      "n_top": 0,
+      "n_total": 61,
+      "observed_share": 0.0,
+      "expected_share": 0.1337719298245614,
+      "enrichment_pp": -0.1337719298245614,
+      "perm_p_two_sided": 0.0047995200479952005,
+      "ci95_null_stat": [
+        -0.08932748538011695,
+        0.0884502923976608
+      ],
+      "q_bh": 0.010798920107989201
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "cortical_status",
+      "category": "CEREBELLUM",
+      "n_top": 8,
+      "n_total": 10,
+      "observed_share": 0.17777777777777778,
+      "expected_share": 0.021929824561403508,
+      "enrichment_pp": 0.1558479532163743,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.021929824561403508,
+        0.04473684210526316
+      ],
+      "q_bh": 9.999000099990002e-05
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "cortical_status",
+      "category": "CORTICAL",
+      "n_top": 21,
+      "n_total": 400,
+      "observed_share": 0.4666666666666667,
+      "expected_share": 0.8771929824561403,
+      "enrichment_pp": -0.41052631578947363,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.09941520467836251,
+        0.0783625730994153
+      ],
+      "q_bh": 9.999000099990002e-05
+    },
+    {
+      "set": "top10_residual",
+      "category_col": "cortical_status",
+      "category": "SUBCORTICAL",
+      "n_top": 16,
+      "n_total": 46,
+      "observed_share": 0.35555555555555557,
+      "expected_share": 0.10087719298245613,
+      "enrichment_pp": 0.25467836257309945,
+      "perm_p_two_sided": 9.999000099990002e-05,
+      "ci95_null_stat": [
+        -0.07865497076023391,
+        0.07690058479532165
+      ],
+      "q_bh": 9.999000099990002e-05
+    }
+  ],
+  "degree_controlled": [
+    {
+      "category_col": "major_structure",
+      "n_categories": 5,
+      "partial_spearman_residual_vs_category_given_log_degree": -0.5710725780831869,
+      "perm_p": 0.0001999600079984003,
+      "q_bh": 0.00029994001199760045
+    },
+    {
+      "category_col": "functional_network",
+      "n_categories": 9,
+      "partial_spearman_residual_vs_category_given_log_degree": -0.0319500547855414,
+      "perm_p": 0.4957008598280344,
+      "q_bh": 0.4957008598280344
+    },
+    {
+      "category_col": "hemisphere",
+      "n_categories": 3,
+      "partial_spearman_residual_vs_category_given_log_degree": 0.4750221932185371,
+      "perm_p": 0.0001999600079984003,
+      "q_bh": 0.00029994001199760045
+    }
+  ]
+}

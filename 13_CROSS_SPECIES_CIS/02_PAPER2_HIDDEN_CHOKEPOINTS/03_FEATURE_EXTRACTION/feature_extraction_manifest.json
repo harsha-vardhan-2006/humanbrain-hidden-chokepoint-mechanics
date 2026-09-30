@@ -1,0 +1,41 @@
+{
+  "n_subjects": 801,
+  "n_nodes": 456,
+  "features": [
+    "degree",
+    "strength",
+    "betweenness",
+    "closeness_d",
+    "redundancy",
+    "bridge",
+    "participation",
+    "within_module_z",
+    "kcore",
+    "eigenvector",
+    "pagerank",
+    "clustering"
+  ],
+  "coupling_risk": {
+    "betweenness": true,
+    "closeness_d": true,
+    "redundancy": true,
+    "degree": false,
+    "strength": false,
+    "bridge": false,
+    "participation": false,
+    "within_module_z": false,
+    "kcore": false,
+    "eigenvector": false,
+    "pagerank": false,
+    "clustering": false
+  },
+  "variant": "sift_radius2_count_connectivity",
+  "cost": 0.15,
+  "runtime_s": 743.9,
+  "amendment_3": {
+    "repair": "redundancy regenerated with int32 common-neighbor counts",
+    "redundancy_vs_clustering_pearson_r": 0.2295410661353042,
+    "note": "bool-dot defect fixed per CONFIG_FREEZE.md Amendment 3; all other columns copied through from the original Stage 6 run"
+  },
+  "note": "all features per-subject on the frozen thresholded binary graph; definitions in 03_FEATURE_EXTRACTION/FEATURE_DEFINITIONS.md"
+}

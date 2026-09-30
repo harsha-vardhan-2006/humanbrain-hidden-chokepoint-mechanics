@@ -1,0 +1,39 @@
+{
+  "cv": "5-fold grouped by subject x 3 seeds",
+  "models": "numpy-native",
+  "note": "predictive benchmark only - NOT a mechanism claim; DL/GNN arm: 08_STATISTICS/dl_kaggle/ (Kaggle GPU)",
+  "results": [
+    {
+      "model": "degree_only",
+      "cv_R2_mean": -5.9723840574917496e-05,
+      "cv_R2_sd": 1.9732583525570194e-06,
+      "cv_R2_permuted_mean": 0.0004272298848906342,
+      "cv_R2_permuted_sd": 1.055667406366428e-06,
+      "delta_cv_R2_vs_degree_only": 0.0
+    },
+    {
+      "model": "ridge",
+      "cv_R2_mean": 0.5739569992105431,
+      "cv_R2_sd": 5.9407119018959085e-05,
+      "cv_R2_permuted_mean": 0.0023892164930472415,
+      "cv_R2_permuted_sd": 1.6011816040741745e-05,
+      "delta_cv_R2_vs_degree_only": 0.5740167230511181
+    },
+    {
+      "model": "elastic_net",
+      "cv_R2_mean": 0.5613949348269831,
+      "cv_R2_sd": 5.8115957350795754e-05,
+      "cv_R2_permuted_mean": 0.002345527998880844,
+      "cv_R2_permuted_sd": 1.3020170579130344e-05,
+      "delta_cv_R2_vs_degree_only": 0.5614546586675581
+    },
+    {
+      "model": "mlp",
+      "cv_R2_mean": -4.092754506467955,
+      "cv_R2_sd": 4.565664752124732,
+      "cv_R2_permuted_mean": -4.6520421080160705,
+      "cv_R2_permuted_sd": 4.485503603676611,
+      "delta_cv_R2_vs_degree_only": -4.09269478262738
+    }
+  ]
+}

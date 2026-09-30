@@ -72,3 +72,53 @@ Next step:  FREEZE 1 REVIEW, then Stage 6 (feature extraction) with
             coupling-risk flags; Stages 7-8 next session.
 Verdict:    FREEZE 1 ACHIEVED - residualization validated and locked.
 ```
+
+---
+
+## P2-01 — Stages 6–24 completion (2026-09-30)
+
+```
+Date:       2026-09-30
+Scope:      downstream chain completion (Stages 6-24) + synthesis + docs.
+Stage 6:    feature matrix 801x456 x 12 features (Amendment-3 redundancy
+            repair verified in-chain: max|diff| vs clustering > 0).
+Stages 7-9: feature QC, univariate (12 features, all q < 1e-27; bridge
+            strongest rho = +0.4985), nested models (M4 cvR2 = 0.294 vs
+            M1 ~ 0; closeness_d/redundancy/bridge best M3 adds).
+Stage 10:   ML benchmark - ridge cvR2 = 0.5740 vs degree_only ~ 0;
+            permuted-R control 0.0024. MLP arm unstable (cvR2 -4.09 +- 4.57,
+            documented benchmark artifact; numpy-native SGD, not a
+            mechanism claim). FIX during run: mlp_fit backward pass
+            err @ W2 -> np.outer(err, W2) (shape bug; pre-result, no
+            numbers consumed before the fix).
+Stage 11:   subject-aware within-subject model, CR1 SEs: all 8 features
+            q < 1e-7 (bridge t = 109.2; clustering t = 56.3).
+Stage 15:   degree-preserving nulls COMPLETE 1200/1200 (12 subjects x 100,
+            seed 20270927, exact degree verification per null, full CIS +
+            9-feature recomputation per null). VERDICT: Outcome C - all 9
+            observed |median rho| INSIDE null p95 bands
+            (bridge obs +0.4985 vs null p95 0.6538; clustering obs
+            -0.1658 vs null p95 0.7314; etc.). Null machinery is WIDE:
+            degree-preserving rewiring alone generates rho magnitudes
+            comparable to the observed ones.
+Stage 20:   robustness matrix (R1/R2/R5) - sign-consistent bridge/
+            participation; winsorization-invariant headline associations.
+Stage 21:   negative controls NC1/NC2 - observed exceeds bands, margins
+            >= 0.13 for all features.
+Stage 12-13: fly case study - ME.131 vs 86 degree-matched peers:
+            CIS z = +23.4 (154x peer median), directed betweenness
+            (sampled k=512, frozen seed) z = +4.08; case-study bounds
+            preserved. FIX during run: to_markdown -> to_string
+            (missing optional dep 'tabulate'; formatting only).
+Stage 22:   chokepoint operationalization + sensitivity (1/2/3/7 joint-
+            criterion candidates at 1/2/5/10%) + human-vs-fly comparison
+            table (12 properties; fly z=1.21 p=0.109 negative preserved).
+Stage 24:   independent verification V01-V12: 12/12 PASS.
+Spatial:    Moran's I / distance nulls NOT_ESTABLISHED (no parcel
+            centroids in frozen manifests) - recorded, not approximated.
+Data protection: Paper 1 + fly artifacts read-only; frozen outputs
+            untouched; nulls checkpointed JSONL (resume-safe).
+Next step:  figures + manuscript package + QC + release (P2-02).
+Verdict:    residual real and learnable; mechanism claim NULL-QUALIFIED
+            (Outcome C); chokepoint = operational label only.
+```

@@ -15,9 +15,16 @@
 13_CROSS_SPECIES_CIS/02_PREPROCESSING/cache_parts/
 13_CROSS_SPECIES_CIS/02_PREPROCESSING/quarantined/
 13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/FINAL_MANUSCRIPT/quarantined/
+
+# Paper 2: heavy regenerable artifacts stay out of git (scripts + summary
+# JSON/CSV tables + verification gates ARE tracked; the raw per-null records
+# and per-subject caches are reproducible from the frozen seeds)
+13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/06_NULL_MODELS/null_records_checkpoint.jsonl
+13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/03_FEATURE_EXTRACTION/_per_subject_cache/
 __pycache__/
 *.pyc
 *.tmp
+.pytest_cache/
 
 # LaTeX intermediates (Tectonic cleans up by default; keep these out of git
 # for any future engine switch)
@@ -29,3 +36,9 @@ __pycache__/
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+
+# Secrets / env (defense in depth; none exist in tree)
+.env
+*.pem
+*.key
+credentials*.json

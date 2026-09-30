@@ -1,0 +1,6 @@
+{
+  "design": "subject fixed effects (within) + CR1 cluster-robust SE, cluster = subject",
+  "n_subjects": 801,
+  "n_rows": 365256,
+  "note": "numpy implementation; statistics cross-checked on a single-subject bootstrap in tests"
+}

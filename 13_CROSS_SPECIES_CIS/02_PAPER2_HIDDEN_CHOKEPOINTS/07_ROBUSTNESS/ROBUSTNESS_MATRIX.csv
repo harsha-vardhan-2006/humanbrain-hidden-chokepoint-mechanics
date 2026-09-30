@@ -1,0 +1,35 @@
+analysis,parameter,feature,statistic,value
+R1_estimator,M2_linear,betweenness,median within-subject rho,-0.24302343030919668
+R1_estimator,M2_linear,closeness_d,median within-subject rho,-0.13881437150103396
+R1_estimator,M2_linear,redundancy,median within-subject rho,0.030818154618055895
+R1_estimator,M2_linear,bridge,median within-subject rho,0.43506971056738775
+R1_estimator,M2_linear,participation,median within-subject rho,-0.3455397401521183
+R1_estimator,M2_linear,within_module_z,median within-subject rho,-0.37657734209836413
+R1_estimator,M2_linear,kcore,median within-subject rho,-0.25108574511513554
+R1_estimator,M2_linear,clustering,median within-subject rho,0.1837620553446256
+R1_estimator,P_df3,betweenness,median within-subject rho,0.10564132587503021
+R1_estimator,P_df3,closeness_d,median within-subject rho,0.2205040641286437
+R1_estimator,P_df3,redundancy,median within-subject rho,-0.1999874944013903
+R1_estimator,P_df3,bridge,median within-subject rho,0.4963707486259939
+R1_estimator,P_df3,participation,median within-subject rho,-0.18014518523271475
+R1_estimator,P_df3,within_module_z,median within-subject rho,-0.05344722477156545
+R1_estimator,P_df3,kcore,median within-subject rho,0.03529004977790313
+R1_estimator,P_df3,clustering,median within-subject rho,-0.14172720769957514
+R1_estimator,Q_bin20,betweenness,median within-subject rho,0.15520987441595904
+R1_estimator,Q_bin20,closeness_d,median within-subject rho,0.2692101809606502
+R1_estimator,Q_bin20,redundancy,median within-subject rho,-0.2504126113949986
+R1_estimator,Q_bin20,bridge,median within-subject rho,0.5236762856367065
+R1_estimator,Q_bin20,participation,median within-subject rho,-0.11573248659090526
+R1_estimator,Q_bin20,within_module_z,median within-subject rho,0.004231235262142917
+R1_estimator,Q_bin20,kcore,median within-subject rho,0.04492021181674613
+R1_estimator,Q_bin20,clustering,median within-subject rho,-0.1897226240936928
+R2_threshold,top1,(ZR),median standardized residual in extreme set,3.701619694056692
+R2_threshold,top5,(ZR),median standardized residual in extreme set,1.6841555872632092
+R5_winsorized_R,0.999,betweenness,median within-subject rho,0.1332919320609954
+R5_winsorized_R,0.999,closeness_d,median within-subject rho,0.2488635827965445
+R5_winsorized_R,0.999,redundancy,median within-subject rho,-0.2179184702753998
+R5_winsorized_R,0.999,bridge,median within-subject rho,0.49847591211536907
+R5_winsorized_R,0.999,participation,median within-subject rho,-0.16764309728409507
+R5_winsorized_R,0.999,within_module_z,median within-subject rho,-0.018594593726170304
+R5_winsorized_R,0.999,kcore,median within-subject rho,0.05563977774771777
+R5_winsorized_R,0.999,clustering,median within-subject rho,-0.16584661420507738

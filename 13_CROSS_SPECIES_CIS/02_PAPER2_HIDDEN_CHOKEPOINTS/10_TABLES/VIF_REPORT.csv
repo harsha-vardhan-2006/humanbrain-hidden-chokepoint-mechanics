@@ -1,0 +1,13 @@
+feature,vif,coupling_risk
+degree,1324.0819385754057,False
+strength,1.5869965312860896,False
+betweenness,43.496977562061566,True
+closeness_d,20.39688343377872,True
+redundancy,2.4925788961455115,True
+bridge,4.120847666422438,False
+participation,1.6015715005351319,False
+within_module_z,11.705140291269784,False
+kcore,2.549747749931161,False
+eigenvector,48.951534339487864,False
+pagerank,1046.8913729115327,False
+clustering,21.64414020193153,False

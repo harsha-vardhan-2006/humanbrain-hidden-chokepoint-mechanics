@@ -1,0 +1,4 @@
+node_id,parcel_name,major_structure,functional_network,degree,CIS,residual,bridge,participation,clustering,in_cis_top5,in_residual_top5,bridge_upper_half,null_arbitration_node_level,spatial_control
+286,RH_DorsAttn_Post_17,CORTEX,dorsal attention,124.0,0.001074774616113,0.0001799610402811,0.7461530551513633,0.8374668723547328,0.3438165438165438,True,True,True,NOT_ESTABLISHED,NOT_ESTABLISHED (no MNI centroids in frozen manifests)
+442,LH_Hippocampus,Subcortex,subcortical,160.0,0.0016862487738481,0.0001996626078959,0.7455301647594772,0.8346781760180146,0.31055187637969095,True,True,True,NOT_ESTABLISHED,NOT_ESTABLISHED (no MNI centroids in frozen manifests)
+451,Cerebellar_Region6,Cerebellum,cerebellar,142.0,0.0017060362284092,0.0004972638702663,0.766319880553296,0.79899044528574,0.3035609551738584,True,True,True,NOT_ESTABLISHED,NOT_ESTABLISHED (no MNI centroids in frozen manifests)

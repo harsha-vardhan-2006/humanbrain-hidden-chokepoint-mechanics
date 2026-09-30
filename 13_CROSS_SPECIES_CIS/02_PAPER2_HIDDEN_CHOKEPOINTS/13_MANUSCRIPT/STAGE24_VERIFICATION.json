@@ -1,0 +1,78 @@
+{
+  "n_pass": 12,
+  "n_total": 12,
+  "results": [
+    {
+      "id": "V01",
+      "check": "orthogonality gate median |rho(R, degree)| < 0.05",
+      "pass": true,
+      "detail": "median |rho| = 0.0327, n_subjects = 801"
+    },
+    {
+      "id": "V02",
+      "check": "same-pairs cross-check rho >= 0.5",
+      "pass": true,
+      "detail": "rho = 0.785 (frozen Stage 3b artifact)"
+    },
+    {
+      "id": "V03",
+      "check": "residual effect positive in all QC-pass subjects",
+      "pass": true,
+      "detail": "801/801 subjects with delta_ours > 0 (median 0.1040, CI [0.1007, 0.1073])"
+    },
+    {
+      "id": "V04",
+      "check": "feature matrix 801 x 456, zero non-finite feature values",
+      "pass": true,
+      "detail": "801 subjects, 365256 rows, 0 non-finite"
+    },
+    {
+      "id": "V05",
+      "check": "univariate table: 12 features, finite rhos, valid q",
+      "pass": true,
+      "detail": "top |median rho| = +0.498 (bridge)"
+    },
+    {
+      "id": "V06",
+      "check": "nested models: M4 delta_cvR2 vs M1 reported",
+      "pass": true,
+      "detail": "M1 cvR2 = -0.0000, M4 cvR2 = 0.2942, delta = +0.2942"
+    },
+    {
+      "id": "V07",
+      "check": "ML benchmark: degree_only vs full ridge reported",
+      "pass": true,
+      "detail": "degree_only = -0.0001, ridge = 0.5740, delta = +0.5740"
+    },
+    {
+      "id": "V08",
+      "check": "subject-aware model: 8 features, valid CR1 output",
+      "pass": true,
+      "detail": "q<0.05 features: ['betweenness', 'closeness_d', 'redundancy', 'bridge', 'participation', 'within_module_z', 'kcore', 'clustering']"
+    },
+    {
+      "id": "V09",
+      "check": "null arbitration recorded for every feature",
+      "pass": true,
+      "detail": "9 features arbitrated; exceed null p95: NONE (Outcome C for all)"
+    },
+    {
+      "id": "V10",
+      "check": "robustness matrix has R1/R2/R5 families",
+      "pass": true,
+      "detail": "families present: ['R1_estimator', 'R2_threshold', 'R5_winsorized_R']"
+    },
+    {
+      "id": "V11",
+      "check": "negative controls recorded (NC1/NC2 per feature)",
+      "pass": true,
+      "detail": "obs exceeds NC1 band: ['betweenness', 'closeness_d', 'redundancy', 'bridge', 'participation', 'within_module_z', 'kcore', 'clustering']"
+    },
+    {
+      "id": "V12",
+      "check": "ME.131 case profile consistent with frozen catalogue",
+      "pass": true,
+      "detail": "catalogue cis = 0.003244, excess ratio = 155.9x"
+    }
+  ]
+}

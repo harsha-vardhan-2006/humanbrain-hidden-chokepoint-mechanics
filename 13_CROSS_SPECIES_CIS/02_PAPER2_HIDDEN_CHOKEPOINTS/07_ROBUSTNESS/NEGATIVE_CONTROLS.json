@@ -1,0 +1,112 @@
+{
+  "n_draws": 100,
+  "seed": 20270927,
+  "implementation": "vectorized rank-permutation (exact Spearman equivalence asserted per feature); frozen seed; draw stream subject-major (exchangeable vs the serial reference - band identical up to Monte-Carlo wobble at n_draws=100; margins reported)",
+  "nc3_nc4_note": "NC3/NC4 covered by ml_benchmark negative control and feature_nulls Stage 15",
+  "results": [
+    {
+      "feature": "betweenness",
+      "median_rho_observed": 0.13329193206099538,
+      "nc1_permuted_R_median": 0.0005133816980561342,
+      "nc1_p95_abs": 0.003940028949481428,
+      "nc2_permuted_f_median": 0.0002745671097933671,
+      "nc2_p95_abs": 0.004428025915235203,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.12935190311151396,
+      "nc2_margin": 0.12886390614576018,
+      "equivalence_max_dev": 1.1102230246251565e-16
+    },
+    {
+      "feature": "closeness_d",
+      "median_rho_observed": 0.2488635827965445,
+      "nc1_permuted_R_median": 0.00035787617859457156,
+      "nc1_p95_abs": 0.0040058695066152285,
+      "nc2_permuted_f_median": -2.463145221324949e-05,
+      "nc2_p95_abs": 0.004058232677578008,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.24485771328992928,
+      "nc2_margin": 0.24480535011896648,
+      "equivalence_max_dev": 1.6653345369377348e-16
+    },
+    {
+      "feature": "redundancy",
+      "median_rho_observed": -0.21791847027539982,
+      "nc1_permuted_R_median": -0.00029807939198791644,
+      "nc1_p95_abs": 0.0038588818893102003,
+      "nc2_permuted_f_median": 8.932835519142397e-05,
+      "nc2_p95_abs": 0.004167233295017583,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.21405958838608963,
+      "nc2_margin": 0.21375123698038223,
+      "equivalence_max_dev": 1.6653345369377348e-16
+    },
+    {
+      "feature": "bridge",
+      "median_rho_observed": 0.49847591211536907,
+      "nc1_permuted_R_median": -0.0002820973605759795,
+      "nc1_p95_abs": 0.004371402592980625,
+      "nc2_permuted_f_median": -0.00027852204219031836,
+      "nc2_p95_abs": 0.003701818510330665,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.49410450952238844,
+      "nc2_margin": 0.4947740936050384,
+      "equivalence_max_dev": 2.220446049250313e-16
+    },
+    {
+      "feature": "participation",
+      "median_rho_observed": -0.1676430972840951,
+      "nc1_permuted_R_median": 0.00029215872742568635,
+      "nc1_p95_abs": 0.004849127859245525,
+      "nc2_permuted_f_median": 0.00013903959370661537,
+      "nc2_p95_abs": 0.0038691833990788095,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.16279396942484958,
+      "nc2_margin": 0.1637739138850163,
+      "equivalence_max_dev": 1.6653345369377348e-16
+    },
+    {
+      "feature": "within_module_z",
+      "median_rho_observed": -0.018594593726170307,
+      "nc1_permuted_R_median": 0.0001910562989612337,
+      "nc1_p95_abs": 0.004355511159555406,
+      "nc2_permuted_f_median": 4.975339454857272e-05,
+      "nc2_p95_abs": 0.0044136816900157885,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.014239082566614901,
+      "nc2_margin": 0.014180912036154519,
+      "equivalence_max_dev": 2.7755575615628914e-17
+    },
+    {
+      "feature": "kcore",
+      "median_rho_observed": 0.05563977774771778,
+      "nc1_permuted_R_median": 8.246925100272671e-05,
+      "nc1_p95_abs": 0.003628487583231397,
+      "nc2_permuted_f_median": 0.00011707879899492257,
+      "nc2_p95_abs": 0.004633260259140029,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.052011290164486385,
+      "nc2_margin": 0.05100651748857775,
+      "equivalence_max_dev": 1.1102230246251565e-16
+    },
+    {
+      "feature": "clustering",
+      "median_rho_observed": -0.16584661420507743,
+      "nc1_permuted_R_median": -0.0002997522244158296,
+      "nc1_p95_abs": 0.0045701764627156015,
+      "nc2_permuted_f_median": -5.489450217700524e-06,
+      "nc2_p95_abs": 0.004411516034221749,
+      "obs_exceeds_nc1_band": true,
+      "obs_exceeds_nc2_band": true,
+      "nc1_margin": 0.16127643774236183,
+      "nc2_margin": 0.1614350981708557,
+      "equivalence_max_dev": 1.6653345369377348e-16
+    }
+  ]
+}
