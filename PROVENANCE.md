@@ -1,4 +1,4 @@
-# PROVENANCE — humanbrain-hidden-chokepoint-mechanics (v2.0.0)
+# PROVENANCE — humanbrain-hidden-chokepoint-mechanics (current release: v2.0.1; origin: v2.0.0 flatten)
 
 This repository is the **standalone release vehicle** for Paper 2 of the
 cross-species control-impact series, per the Paper 2 master prompt
@@ -15,6 +15,7 @@ analysis history.
 | Manuscript commit | `80fe5ba` (formal `RESEARCH_PAPER.md`) |
 | Parent freeze commit | `5ee7ecc` (STUDY FREEZE declaration) |
 | Imported parent history | full parent `main` history, preserved verbatim up to the flatten commit |
+| Current release tag | `v2.0.1` → audit-response commit (independent verifier, submission package) |
 
 ## Flatten operation (this repo's release commit)
 
@@ -36,11 +37,16 @@ manuscript file is **byte-identical** to the parent freeze state.
 
 ## Frozen release archive
 
-- `humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip` — 119 entries,
-  SHA256 `45c758b8067b46f0758a18f1e5a70b197c3e8d6ede0b26c0739ceb50ebfd1e0e`
-  (manifest `dist/SHA256SUMS_paper2.txt`, built from the parent repo
-  release tree). The ZIP itself is not tracked in git (regenerable,
-  checksummed instead).
+- `humanbrain_hidden_chokepoint_mechanics_v2.0.1.zip` — the current
+  release archive (contents identical to the v2.0.0 archive's study tree
+  plus the audit-response additions; see `dist/SHA256SUMS_paper2.txt` for
+  the authoritative SHA256 of the original v2.0.0 archive,
+  `45c758b8067b46f0758a18f1e5a70b197c3e8d6ede0b26c0739ceb50ebfd1e0e`).
+  The ZIP itself is not tracked in git (regenerable, checksummed
+  instead); it ships as a GitHub Release v2.0.1 asset together with the
+  compiled PDFs, the checksum manifest, and the raw 1,200-record null
+  ensemble
+  (SHA256 `e01852cdf4a2f00f63531dc108b35c3a5b005714713cc443a1760d07ecde7864`).
 
 ## Read-only upstream inputs
 
@@ -53,6 +59,7 @@ manuscript file is **byte-identical** to the parent freeze state.
 
 ## Tag
 
-Tag `v2.0.0` in this repo marks the standalone release head (flatten +
-docs). It is an independent tag object — the parent repo's `v2.0.0` tag
-(commit `9e9cfd1`) remains untouched and canonical for the parent tree.
+Tag `v2.0.1` marks the current standalone release head. Tag `v2.0.0` in
+this repo (commit `a4d84af`) records the flatten-release state; the
+parent repo's `v2.0.0` tag (commit `9e9cfd1`) remains untouched and
+canonical for the parent tree.

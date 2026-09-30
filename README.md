@@ -102,8 +102,9 @@ STUDY FREEZE). The manuscript is
 Tag `v2.0.1` (this repository). Parent lineage:
 `humanbrain_cross_species_cis` v2.0.0 + freeze commit `5ee7ecc`
 (see `PROVENANCE.md`). Release archive:
-`humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip`
-(SHA256 in `dist/SHA256SUMS_paper2.txt`).
+`humanbrain_hidden_chokepoint_mechanics_v2.0.1.zip`
+(assets of GitHub Release v2.0.1; original v2.0.0-archive SHA256 in
+`dist/SHA256SUMS_paper2.txt`).
 
 ## Citation
 

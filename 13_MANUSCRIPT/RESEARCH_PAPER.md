@@ -5,7 +5,7 @@
 **Author:** Harsha Vardhan Malipeddi
 **Affiliation:** Independent Researcher
 **Corresponding author:** Harsha Vardhan Malipeddi
-**ORCID / email:** [author to supply before submission]
+**Email (corresponding author):** harshavardhanmalipeddi1@gmail.com
 **Funding:** The author received no specific funding for this work.
 **Competing interests:** The author declares no competing interests.
 **Ethics:** This study used previously acquired, de-identified data
@@ -17,7 +17,7 @@ analysis framework, performed all computational analyses, validation and
 verification, and wrote the manuscript.
 **Data & code availability:** see §8 (all data sources identified;
 analysis code and artifacts in the frozen repository, release v2.0.1).
-**Version:** v2.0.0 — 2026-09-30
+**Version:** v2.0.1 — 2026-09-30
 **Study tree:** `13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/`
 **Provenance:** every number in this paper traces to a frozen artifact on disk in
 the study tree (see §8 and `REPRODUCIBILITY.md`). Verification gates V01–V12
@@ -450,12 +450,17 @@ structure.
 
 ## 8. Data, code and reproducibility availability
 
-- **Repository:** `github.com/harsha-vardhan-2006/humanbrain_cross_species_cis`,
-  tag `v2.0.0` (commit `9e9cfd1`; study tree
-  `13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/`).
-- **Release archive:** `dist/humanbrain_hidden_chokepoint_mechanics_v2.0.0.zip`
-  (SHA256 `45c758b8067b46f0758a18f1e5a70b197c3e8d6ede0b26c0739ceb50ebfd1e0e`,
-  manifest `dist/SHA256SUMS_paper2.txt`).
+- **Repository (current release):**
+  `github.com/harsha-vardhan-2006/humanbrain-hidden-chokepoint-mechanics`,
+  tag `v2.0.1` (flattened standalone mirror; full parent lineage imported).
+- **Parent study tree:**
+  `github.com/harsha-vardhan-2006/humanbrain_cross_species_cis`,
+  tag `v2.0.0` → commit `9e9cfd1` (study tree
+  `13_CROSS_SPECIES_CIS/02_PAPER2_HIDDEN_CHOKEPOINTS/`; frozen).
+- **Release archive:** `humanbrain_hidden_chokepoint_mechanics_v2.0.1.zip`
+  (SHA256 in `dist/SHA256SUMS_paper2.txt`; also attached to the GitHub
+  Release v2.0.1 together with the compiled PDFs and the raw 1,200-null
+  ensemble).
 - **Data:** AOMIC ID1000 derived structural connectomes (Zenodo 19796783,
   CC-BY-4.0); FAFB v783 fly release (frozen `fruitfly` v1.0.0 artifacts).
 - **Reproducibility:** every stage is scripted with frozen seeds and
